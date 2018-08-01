@@ -1,0 +1,66 @@
+.haveImageTitle {
+  font-size: 34rpx; /* 35rpx */
+  width: 440rpx;
+  float: left;
+  /* overflow: hidden;
+  height: 95rpx; */
+}
+
+.deleteIcon {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 10rpx;
+}
+
+.noImageTitle {
+  font-size: 34rpx;
+}
+
+.noImage {
+  overflow: hidden;
+}
+
+.haveImage {
+  overflow: hidden;
+}
+
+.newsList {
+  margin-top: 136rpx;
+}
+
+.haveImage .newsCover {
+  width: 230rpx;
+  height: 150rpx;
+  float: right;
+}
+
+.newsItems {
+  border-bottom: 1rpx solid #f0f0f0;
+  padding-top: 20rpx;
+  padding-bottom: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.loading image {
+  height: 40rpx;
+  width: 40rpx;
+  display: block;
+  margin: 10rpx auto;
+}
+
+.loadingText {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.newsSource {
+  height: 40rpx;
+  font-size: 26rpx;
+  color: #aaa;
+  float: left;
+  width: 100%;
+}

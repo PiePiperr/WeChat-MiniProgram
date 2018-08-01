@@ -1,0 +1,19 @@
+<button class='save' bindtap='saveTap'>保存</button>
+
+<view>
+  <button class='btn1'>所有行业</button>
+    <block wx:for="{{items}}" wx:key="items">
+      <button  class='btn2' hover-class='btnhover' data-id="{{index}}">{{item.name}}</button> 
+    </block>    
+</view>
+
+<view class='txt'>
+  <text >其他行业</text>
+  <view class="section">    
+    <input bindinput="bindKeyInput" placeholder="不同行业之间以“空格”隔开"/>
+  </view>
+</view>
+
+
+
+

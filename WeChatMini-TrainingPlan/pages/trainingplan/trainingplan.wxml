@@ -1,0 +1,52 @@
+<!--logs.wxml--> 
+  <view class="plan" >
+    <image src='../../icon/delete.png' class='delete'></image> 
+  </view>
+  
+<view>
+  <text class='kind'>理想职业</text>    <!-- profession -->   <!-- idealProfession -->   
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{items}}">  
+      <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>  
+  </checkbox-group>
+  <view class="plan"></view>
+  <!--  <view class="{{info}} plan"></view>  -->
+</view>
+
+
+<view>
+  <text class='kind' bindtouchend='alter_pro'>理想行业</text>     <!-- 行业：business 或者 trade-->
+  <image src='../../icon/work.png' class='edit' bindtap='edit_trade'></image>     
+
+  <view>        
+    <text class='all'>所有行业</text> 
+    <view class="plan"></view>
+    <!--  <view class="{{info}} plan"></view>  -->        
+  </view>
+</view>
+
+
+<view>
+  <text class='kind'>目标公司</text>         <!-- 公司：company  或者 firm-->
+  <image src='../../icon/work.png' class='edit' bindtap='edit_company'></image>   
+  <view>
+    <text class='all'>暂无</text> 
+    <view class="plan"></view>
+    <!-- <view class="{{info}} plan"></view>  -->  
+  </view>
+</view>
+
+
+<view >
+  <text class='kind'>关注的企业家</text> 
+  <image src='../../icon/work.png' class='edit1' bindtap='edit_entrepreneur'></image>
+     
+  <view> 
+    <text class='all'>暂无</text> 
+    <view class="plan"></view>  
+    <!-- <view class="{{info}} plan"></view>  -->  
+  </view>
+</view>
+
+

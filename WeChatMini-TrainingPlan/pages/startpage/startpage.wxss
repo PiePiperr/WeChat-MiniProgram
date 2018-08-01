@@ -1,0 +1,38 @@
+.welcome{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 400rpx;
+  margin-top: 70rpx
+  
+}
+.btn-all{
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 35rpx;
+  width: 200rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-style: solid;
+  border-color: gainsboro;
+  border-width: thin;
+}
+
+.TradeList{
+  display: block;
+  width: 720rpx;
+  margin: 35rpx 20rpx;
+}
+
+.btn{
+  display: inline-table;
+  width: 210rpx;
+  height: 75rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-style: solid;
+  border-color: gainsboro;
+  border-width: thin;
+  margin: 15rpx
+}

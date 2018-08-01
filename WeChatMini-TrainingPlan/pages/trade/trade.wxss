@@ -1,0 +1,62 @@
+/* pages/edit_business/edit_business.wxss */
+.save{
+  width: 120rpx;
+  height: 70rpx;
+  margin-top: 20rpx;
+  margin-left: 78%; 
+    
+  font-size: 26rpx; 
+  line-height: auto;
+  /*   text-align: center;   */
+}
+
+.btn1 {
+  width: 200rpx;
+  height: 80rpx;
+  margin-top: 16rpx;
+  margin-left: 5%;  
+  font-size: 34rpx; 
+  line-height: auto;
+
+}
+
+.btn2 {
+  width: 200rpx;
+  height: 80rpx;
+  display: inline-block;
+  line-height: auto;
+  font-size: 34rpx; 
+ 
+
+  margin-top: 16rpx;
+  margin-left: 5%;  
+  border-radius: 2rpx; 
+}
+
+.btnhover{
+  background-color: #10a1ed;
+  border-radius: 10rpx;
+  
+}
+
+.txt{
+  font-size:40rpx;
+  margin-top: 60rpx; 
+  padding-left: 5%;
+}
+
+.section{
+  width: 92%;
+  height: 250rpx;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  font-size:32rpx;
+  padding-left: 20rpx;
+}
+
+
+
+
+

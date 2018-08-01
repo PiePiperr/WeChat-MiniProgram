@@ -1,0 +1,177 @@
+/* pages/canvas/canvas.wxss */
+button{
+  position:relative;
+background-color:white;
+
+}
+
+button::after{
+    border:none;
+}
+canvas{
+  position: fixed;
+  top: 0;
+  left: 999px;
+}
+/* 画布绘制过程不能隐藏 但是又不能被用户看见 所以定位在用户看不到地方 */
+.speak{
+  width:50rpx;height:50rpx;
+  }
+.login {
+  margin: 400rpx 40rpx;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.content {
+  padding: 30rpx 20rpx;
+}
+
+.content image {
+  display: block;
+  margin: 30rpx auto;
+}
+
+.detail {
+  margin-bottom: 25rpx;
+  font-size: 36rpx;
+  line-height: 60rpx;
+  color: #2a2a2a;
+}
+
+.title {
+  font-size: 15pt;
+  font-weight: bold;
+  line-height: 23pt;
+  margin: 20rpx 0;
+}
+
+.publish {
+  margin-left: 50rpx;
+}
+
+image {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.recom0 {
+  border-top: 35rpx solid #efefef;
+  border-bottom: 35rpx solid #efefef;
+  padding: 30rpx 0 0;
+}
+
+.recom {
+  margin-left: 50rpx;
+  width: 200rpx;
+}
+
+.related {
+  margin: 15rpx 10rpx 0rpx;
+  margin-bottom: 125rpx;
+}
+
+.relatedtitle {
+  font-size: 12pt;
+  width: 380rpx;
+  float: left;
+  overflow: hidden;
+  height: 100rpx;
+}
+
+.relatedtitle1 {
+  font-size: 12pt;
+  width: 480rpx;
+  float: left;
+}
+
+.icon {
+  background-color: #17aff8;
+  width: 10rpx;
+  height: 50rpx;
+  border-radius: 5rpx;
+  margin-left: 30rpx;
+}
+
+.list {
+  border-bottom: 1rpx solid #e9e9e9;
+  padding: 15rpx;
+  overflow: hidden;
+}
+
+.cover {
+  width: 200rpx;
+  height: 150rpx;
+  float: right;
+}
+
+.source {
+  width: 100%;
+  font-size: 30rpx;
+  color: #aaa;
+  border-bottom: 1rpx solid #aaa;
+  padding-bottom: 20rpx;
+}
+
+.re_source {
+  color: #aaa;
+  font-size: 30rpx;
+  float: left;
+  width: 100%;
+}
+
+#footer{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 125rpx;
+  background-color: #efefef;
+  position: fixed;
+  bottom: 0
+}
+ 
+ .footer-btn {
+  width: 60rpx;
+  height: 90rpx;
+  padding: 15rpx;
+}    
+
+.button_img {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+text{
+  font-size: 30rpx;
+  text-align: center
+}
+button[plain] {
+  border: 0px solid #353535;
+}
+
+.share1{
+  position: absolute;
+  top:500rpx
+}
+
+.speak{
+  position:fixed;
+  bottom:120rpx;
+  width:120rpx;
+  height:120rpx;
+  right:30rpx;
+}
+
+.speak2{
+  width:120rpx;
+  height:120rpx;
+  line-height:80rpx
+}

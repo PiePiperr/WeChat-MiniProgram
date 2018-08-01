@@ -1,0 +1,53 @@
+.checkbox{ 
+  margin: 20rpx 50rpx; 
+  display: inline-block;
+  font-size: 35rpx;
+}
+
+.kind{
+  font-size:40rpx;
+  margin: 26rpx; 
+  padding-left: 20rpx;
+}  
+
+  
+
+.all{
+  font-size: 30rpx;
+  margin: 26rpx; 
+  padding-left: 20rpx;
+  
+}
+
+.edit {
+  height: 40rpx;
+  width: 40rpx; 
+  padding-left: 360rpx;
+ /**  margin-top: 10rpx;  **/
+  display: inline-block;
+}
+
+.edit1 {  /**   关注的企业家 edit1  **/
+  height: 40rpx;
+  width: 40rpx; 
+  padding-left: 280rpx;
+  display: inline-block;
+}
+
+.delete {    
+  height: 40rpx;
+  width: 40rpx; 
+  padding-top: 10rpx;       
+  padding-left: 540rpx;  
+}
+
+
+.plan {
+  width: 88%;
+  /**  line-height: 20rpx;   行高 **/
+  /**  font-size: 34rpx;   **/
+  height: 60rpx;
+  border-bottom: 2px solid #e7e7e7;
+  background-color: white;       /** 下划线的背景颜色 **/
+  margin: 0 auto;
+}

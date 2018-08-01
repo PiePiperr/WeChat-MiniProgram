@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/startpage/startpage",
+    "pages/index/index",
+    "pages/index_detail/index_detail",
+    "pages/trainingplan/trainingplan",
+    "pages/trade/trade",
+    "pages/company/company",
+    "pages/entrepreneur/entrepreneur"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FCFCFC",
+    "navigationBarTitleText": "陆向谦推荐",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/news1.png",
+        "selectedIconPath": "icon/news2.png"
+      },
+      {
+        "pagePath": "pages/trainingplan/trainingplan",
+        "text": "培养计划",
+        "iconPath": "icon/user0.png",
+        "selectedIconPath": "icon/user00.png"
+      }
+    ]
+  }
+}

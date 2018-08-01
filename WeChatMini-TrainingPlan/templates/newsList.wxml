@@ -1,0 +1,21 @@
+ <template name='newsList'>
+    <view class="newsItems">
+      <block wx:if="{{newsList.images[0]==null}}">
+        <view class="noImage" bindtap="linkDetail" data-iid="{{newsList.iid}}" data-algs="{{newsList.algs[0]}}" data-alg_group="{{alg_group}}">
+          <view class="noImageTitle">{{newsList.title}}</view>
+        </view>
+        <view class='newsSource'>{{newsList.source_name}}
+          <image src='../../icon/delete.png' class='deleteIcon' bindtap='deleteNewsItem' data-iid="{{newsList.iid}}" data-index="{{index}}"></image>
+        </view>
+      </block>
+      <block wx:if="{{newsList.images[0]!=null}}">
+        <view class="haveImage" bindtap="linkDetail" data-iid="{{newsList.iid}}" data-algs="{{newsList.algs[0]}}" data-alg_group="{{alg_group}}">
+          <view class="haveImageTitle">{{newsList.title}}</view>
+          <image class="newsCover" mode="aspectFill" src="{{newsList.images[0]}}"></image>
+        </view>
+        <view class='newsSource'>{{newsList.source_name}}
+          <image src='../../icon/delete.png' class='deleteIcon' bindtap='deleteNewsItem' data-iid="{{newsList.iid}}" data-index="{{index}}"></image>
+        </view>
+      </block>
+    </view>
+    </template>
