@@ -1,0 +1,131 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.6.0",
+	"appid": "wxe4fac813a0d128d3",
+	"projectname": "%E8%BF%AD%E4%BB%A32.2",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 15,
+			"list": [
+				{
+					"id": 0,
+					"name": "新闻详情",
+					"pathName": "pages/index_detail/index_detail",
+					"query": "iid=AODgzNDIyMDU0MDA"
+				},
+				{
+					"id": 1,
+					"name": "个人中心",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "绑定手机",
+					"pathName": "pages/phone/phone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的话题",
+					"pathName": "pages/user_talk/user_talk",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "意见反馈",
+					"pathName": "pages/user_feedback/user_feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "话题",
+					"pathName": "pages/user_talk/user_talk",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的作品",
+					"pathName": "pages/user_work/user_work",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "完善信息",
+					"pathName": "pages/perfect/perfect",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "发现",
+					"pathName": "pages/find/find",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "话题2",
+					"pathName": "pages/topicdetail/topicdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/user_collect/user_collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发现1",
+					"pathName": "pages/topicdetail/topicdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "123",
+					"pathName": "pages/phone/phone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "听力",
+					"pathName": "pages/listen/listen",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index"
+				}
+			]
+		}
+	}
+}

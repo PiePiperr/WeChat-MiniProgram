@@ -1,0 +1,48 @@
+.box{ 
+  margin-left: 310rpx;
+}
+
+.checkbox{ 
+  margin-top: 10rpx;
+  margin-left: 10rpx;  
+  display: inline-block;
+  font-size: 30rpx;
+}
+
+.kind{
+  font-size:34rpx;
+  margin-top: 20rpx;  
+  margin-left: 320rpx; 
+}  
+
+.all{
+  font-size: 30rpx;
+  margin-top: 26rpx; 
+  margin-left: 320rpx;
+  margin-bottom: -30rpx;  
+}
+
+.edit {
+  display: inline-block;
+  height: 38rpx;
+  width: 38rpx; 
+  margin-left: 226rpx;
+  margin-top: 20rpx;
+  margin-bottom: -4rpx;
+}
+
+.edit0 {
+  height: 38rpx;
+  width: 38rpx; 
+  margin-left: 156rpx;
+  margin-top: 20rpx;
+  margin-bottom: -4rpx;
+}
+
+.line {
+  width: 53%;  
+  height: 60rpx;
+  margin-left: 320rpx;
+  margin-top: -54rpx; 
+  border-bottom: 2px solid #e7e7e7;      
+}

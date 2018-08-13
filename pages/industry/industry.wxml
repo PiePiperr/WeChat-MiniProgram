@@ -1,0 +1,22 @@
+<!--pages/industry/industry.wxml-->
+<button class='btn_all'  plain style="border: 2px solid #17AFF8; color: #17AFF8;" >所有行业</button>
+<view class='btn1'>
+    <block wx:for="{{IndustryList}}" wx:key="index">      
+      <button wx:if='{{item.check==0}}' bindtap='check' class='btn2' plain style=" border: 2px solid #17AFF8; color: #17AFF8; background-color: white; line-height: 50rpx;"  data-Index="{{index}}" data-data="{{item}}"> {{item.name}} </button>
+
+      <button wx:if='{{item.check==1}}' bindtap='check' class='btn2'  style="color: white; border-color:#17AFF8;  background-color: #17AFF8; line-height: 62rpx; " data-Index="{{index}}" data-data="{{item}}">{{item.name}}</button> 
+    </block>      
+</view>
+
+<view class='txt' >
+  <text>其他行业</text>
+</view>
+<view class="section">    
+  <input bindinput="bindKeyInput" placeholder="不同行业之间以“空格”隔开"/>
+</view>
+
+<button class='save'  style="color: white; border-color:#17AFF8; " bindtap='saveTap'>保存</button>
+
+
+
+

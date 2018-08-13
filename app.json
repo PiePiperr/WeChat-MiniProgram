@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/startpage/startpage",
+    "pages/index/index",
+    "pages/index_detail/index_detail",
+    "pages/industry/industry",
+    "pages/company/company",
+    "pages/entrepreneur/entrepreneur",
+    "pages/search/search",
+    "pages/user/user",
+    "pages/user_collect/user_collect",
+    "pages/user_work/user_work",
+    "pages/user_topic/user_topic",
+    "pages/user_feedback/user_feedback",
+    "pages/find/find",
+    "pages/phone/phone",
+    "pages/perfect/perfect",
+    "pages/topicdetail/topicdetail"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FCFCFC",
+    "navigationBarTitleText": "陆向谦推荐",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/icon/news1.png",
+        "selectedIconPath": "/icon/news2.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "/icon/find1.png",
+        "selectedIconPath": "/icon/find2.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "/icon/user1.png",
+        "selectedIconPath": "/icon/user2.png"
+      }
+    ],
+    "color": "#bfbfbf",
+    "selectedColor": "#17aff8",
+    "borderStyle": "white"
+  }
+}

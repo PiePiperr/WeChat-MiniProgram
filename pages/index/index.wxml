@@ -1,0 +1,52 @@
+<!-- 获取导航条 -->
+<scroll-view scroll-x="true" class="nav">
+  <block wx:for="{{nav}}" wx:key="index" wx:for-item="nav">
+    <text class="{{cid==nav.id?'active':''}}" bindtap="loadColumn" data-id="{{nav.id}}">{{nav.name}}</text>
+  </block>
+  <view class='search'>
+    <image style='width:50rpx;height:50rpx;padding-top:25rpx;' src='../../icon/search1.png' bindtap='Linksearch'></image>
+  </view>
+</scroll-view>
+
+
+
+
+
+
+
+<!-- 获取列表 -->
+<view class="list">
+  <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+    <view class="item">
+
+      <block wx:if="{{list.images[0]==null}}">
+        <view class="noimage" bindtap="linkDetail" data-iid="{{list.iid}}" data-algs="{{list.algs[0]}}" data-alg_group="{{alg_group}}">
+          <view class="title1">{{list.title}}</view>
+        </view>
+        <view class='source'>{{list.source_name}}
+          <image src='../../icon/delete.png' class='delete' hover-class='del' bindtap='delete' data-iid="{{list.iid}}" data-index="{{index}}"></image>
+        </view>
+      </block>
+
+      <block wx:if="{{list.images[0]!=null}}">
+        <view class="haveimage" bindtap="linkDetail" data-iid="{{list.iid}}" data-algs="{{list.algs[0]}}" data-alg_group="{{alg_group}}">
+          <view class="title">{{list.title}}</view>
+
+          <image class="cover" mode="aspectFill" src="{{list.images[0]}}"></image>
+        </view>
+
+        <view class='source'>{{list.source_name}}
+          <image src='../../icon/delete.png' class='delete' bindtap='delete' data-index="{{index}}"></image>
+        </view>
+      </block>
+    </view>
+  </block>
+
+</view>
+
+<view hidden="{{loading}}" class="load">
+  <view class="loadtext">
+    <text>正在加载\n</text>
+  </view>
+  <image src="/icon/loading.gif" mode='aspectFill'></image>
+</view>

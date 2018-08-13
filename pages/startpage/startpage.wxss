@@ -1,0 +1,50 @@
+.IndustryList{
+  width: 100%;
+  margin: 0 15rpx;
+  z-index: 1
+}
+
+.btn0{
+  display: block;
+  position: absolute;
+  right: 35rpx;
+  top: 150rpx;
+  width: 185rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: white;
+  color:#17AFF8;
+  border-style: solid;
+  border-color: #17AFF8;
+  border-width: thin;
+  border-radius: 10rpx
+}
+
+.btn{
+  display:inline-table;
+  width: 185rpx;
+  height: 70rpx;
+  margin: 25rpx 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-style: solid;
+  border-color: #17AFF8;
+  border-width: thin;
+  border-radius: 10rpx
+}
+
+.btn2{
+  display: inline-block; 
+  position: absolute; 
+  bottom: 40rpx; 
+  right: 35rpx; 
+  width: 300rpx;
+  height: 100rpx; 
+  margin:0; 
+  font-size: 40rpx;
+  border-style: solid;
+  border-color: #17AFF8;
+  border-width: thin;
+  border-radius: 10rpx
+}

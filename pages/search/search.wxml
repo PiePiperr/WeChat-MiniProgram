@@ -1,0 +1,57 @@
+<view class="searchArea">
+  <view class="search">
+    <image src="/icon/search_icon.png" class="icon"></image>
+    <input placeholder="搜索一下" confirm-type="search" bindconfirm="search" value='{{inputText}}' style='font-size:12pt; display:inline-block;' bindinput="bindKeyInput" ></input>
+  </view>
+  <view bindtap="cancel" class='search1'>清空</view>
+</view>
+
+<view wx:if='{{list!==""}}' class='tip'>资讯详情</view>
+
+<view class="list">
+
+
+  <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+  
+    <view class="item" bindtap="linkDetail" data-iid="{{list.iid}}">
+
+      <block wx:if="{{list.images[0]==null}}">
+        <view class="noimage">
+          <view class="title1">{{list.title}}</view>
+           <view class='source'>{{list.source_name}}</view>
+        </view>
+      </block>
+
+      <block wx:if="{{list.images[0]!=null}}">
+        <view class="haveimage">
+          <view class="title">{{list.title}}</view>
+          <image class="cover" mode="aspectFill" src="{{list.images[0]}}"></image>
+           <view class='source'>{{list.source_name}}</view>
+        </view>
+        
+      </block>
+
+    </view>
+  </block>
+</view>
+
+<view hidden="{{loading}}" class="load">
+  <view class="loadtext">
+    <text>正在加载\n</text>
+  </view>
+  <image src="/icon/loading.gif" mode='aspectFill'></image>
+</view>
+
+<view hidden="{{none}}" class="none">
+  <view class="nonetext">搜索不到相关资讯</view>
+</view>
+
+<view hidden="{{his}}" class="history">
+  <view class="sea_his">搜索历史：</view>
+
+  <view wx:for="{{history}}" wx:key="index" wx:for-item="his" wx:if='{{index<3}}' class="detail" bindtap='research' data-value='{{his}}'>
+    {{his}}
+  </view>
+  <view hidden='{{clear}}' class="clear" bindtap='clearHistory'>清空搜索历史</view>
+</view>
+<view hidden='{{hisnone}}' class='his_none'>暂无搜索历史</view>

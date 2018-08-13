@@ -1,0 +1,40 @@
+<button class='save'>保存</button>
+<view class='page'>
+  <view class='tip'>*以下企业均来自“IT桔子千里马俱乐部”，并按估值降序排列</view>
+  
+  <view class='ch_company'>
+    <view class='text'>已选</view>
+    <view wx:if='{{myCompany==""}}' class='none'>无</view>
+    <block wx:for="{{myCompany}}" wx:key="index">
+      <view class='my_company'>{{item}}
+        <image src='../../icon/delete.png' class='delete' mode='aspectFit'bindtap='delete' data-Index="{{index}}"></image>
+      </view>
+    </block>
+  </view>
+
+  <view class="searchArea">
+    <view class="searchInput">
+      <image src="/icon/search.png"></image>
+      <input confirm-type="search" bindconfirm="searchCompany" value='{{inputText}}' style='font-size:12pt; display:inline-block;' bindinput="bindKeyInput" bindfocus='bindfocus'></input>
+    </view>
+    <view bindtap="searchCompany" hidden='{{!search}}' class='clearSearch'>搜索</view>
+    <view bindtap="clcSearchCompany" hidden='{{search}}' class='clearSearch'>取消</view>
+  </view>
+  
+  <view hidden="{{loadingIconHidden}}" class="loading">
+    <view class="loadingText">
+      <text>正在加载\n</text>
+    </view>
+    <image src="/icon/loading.gif" mode='aspectFill'></image>
+  </view>
+
+  <view class="companyList" hidden='{{!comp_List}}'>
+    <block wx:for="{{companyList}}" wx:key="index" wx:for-item="companyList">
+      <view bindtap="choose" data-id='{{companyList}}' class='company' >{{companyList}}</view>
+    </block>
+  </view>
+  <view class="companyList" hidden='{{!searResult}}'>
+    <view  bindtap="choose" class='company'  data-id='{{searchResult}}'>{{searchResult}}</view>
+  </view>
+  <view hidden="{{noResultHidden}}" class="noResult">暂无搜索结果</view>
+</view>

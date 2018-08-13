@@ -1,0 +1,10 @@
+<!--pages/user_work/user_work.wxml-->
+
+<view class='{{nowork}} notopic_'>
+  <image class='notopic' src='../../icon/nowork.png'></image>
+
+  <view class='notopictext'>暂无作品</view>
+</view>
+
+
+

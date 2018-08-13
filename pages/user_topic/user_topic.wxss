@@ -1,0 +1,77 @@
+/* pages/user_topic/user_topic.wxss */
+
+.list {
+  height: 118rpx;
+  width: 600rpx;
+  border-bottom: 1rpx solid #95a3ae;
+  padding: 20rpx 0;
+  margin-left: 130rpx;
+}
+
+.title {
+  width: 80%;
+  height: 45rpx;
+  font-size: 32rpx;
+  color: #000;
+  letter-spacing: -0.94px;
+  margin-top: 34rpx;
+  display: inline-block;
+}
+
+.cover {
+  width: 90rpx;
+  height: 90rpx;
+  float: left;
+  background: 24rpx 20rpx;
+  border-radius: 10px;
+  margin: 30rpx 20rpx 0;
+}
+
+.borrow {
+  height: 28rpx;
+  width: 15rpx;
+  float: right;
+  margin-top: 50rpx;
+}
+
+.notopic {
+  width: 186rpx;
+  height: 186rpx;
+}
+
+.notopictext {
+  margin: 37rpx auto;
+  font-size: 37rpx;
+  color: #999;
+  height: 53rpx;
+  width: 223rpx;
+}
+
+.notopic_ {
+  margin: 186rpx 282rpx 0rpx 282rpx;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.nocollect {
+  width: 186rpx;
+  height: 186rpx;
+}
+
+.nocollecttext {
+  margin: 37rpx auto;
+  font-size: 37rpx;
+  color: #999;
+  height: 53rpx;
+  width: 223rpx;
+}
+
+.nocollect_ {
+  margin: 186rpx 282rpx 0rpx 282rpx;
+}

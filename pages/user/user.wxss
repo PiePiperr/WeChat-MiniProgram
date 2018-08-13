@@ -1,0 +1,217 @@
+page{
+  display: block;
+  min-height: 100%;
+  background-color: #e7e7e7
+}
+.login {
+  margin: 65rpx 40rpx;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.userInfo1 {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin: 10rpx auto;
+  background-color: white
+}
+
+.user{
+  display: block;
+  position: relative;
+  width: 95%;
+  height: 240rpx;
+  margin: 20rpx auto 0;
+  background-color: #14aff8;
+  border-radius: 20rpx
+}
+
+/* 用户头像 */
+.avatar {
+  display: inline-block;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border: 10rpx solid white;
+  margin: 20rpx 40rpx;
+}
+
+/* 用户姓名 */
+.name {
+  display: block;
+  position: absolute;
+  top:20%;
+  left:40%;
+  text-align: center;
+  font-size: 40rpx;
+  color:white;
+}
+
+/* 所属部门 */
+.section{
+  display: block;
+  position: absolute;
+  top:30%;
+  left:40%;
+  text-align: center;
+  font-size: 40rpx;
+  color:black;
+}
+
+.careers{
+  display: block;
+  position: absolute;
+  top:55%;
+  left:40%;
+  text-align: center;
+  font-size: 30rpx;
+  color:white;
+}
+
+.trainingplan{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  width: 96%;
+  height: 200rpx;
+  margin: 20rpx auto 5rpx;
+  background-color: white;
+}
+
+.trainingplan1{
+  display: block;
+  position: relative;
+  width: 33%;
+  height: auto;
+  margin: 5rpx;
+}
+.text1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:5%;
+  font-size: 35rpx;
+}
+
+.number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  font-size: 45rpx;
+}
+
+.border{
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 33%;
+  width: 33%;
+  height: 25%;
+  border-left: solid #14aff8 4rpx;
+  border-right: solid #14aff8 4rpx;
+}
+
+.warning{
+  display: block;
+  position: absolute;
+  font-size: 30rpx;
+  bottom: 2%;
+  right: 5%
+}
+
+.userInfo2{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10rpx;
+  background-color: white
+}
+
+.my {
+  display: block;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  height: 80rpx;
+  border-bottom: 2px solid #e7e7e7;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.work {
+  height: 40rpx;
+  width: 40rpx;
+  float: left;
+  padding-right: 20rpx;
+  margin: 20rpx 40rpx 0 40rpx;
+}
+
+.collect {
+  height: 35rpx;
+  width: 35rpx;
+  float: left;
+  padding-right: 20rpx;
+  margin: 20rpx 40rpx 0 40rpx
+}
+
+.borrow {
+  height: 28rpx;
+  width: 15rpx;
+  float: right;
+  margin: 20rpx 40rpx 0 0;
+}
+
+.text2{
+  display: inline-block;
+  margin: auto;
+  align-items: center
+}
+
+button[type=primary] {
+  color: #fff;
+  background-color: #14aff8;
+  border-radius: 90rpx;
+}
+
+.tip0 {
+  color: #666;
+  margin: 0 80rpx;
+  font-size: 30rpx;
+}
+.phone{
+  position:fixed;
+  color:white;
+  top:276rpx;
+  left:590rpx;
+  border:1px solid white;
+  border-radius:90rpx;
+  width:140rpx;
+  font-size:30rpx;
+  text-align:center;
+  line-height:50rpx;
+}
+
+.aboutus{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 10rpx;
+  background-color: white
+}
+
+.QRcode{
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx 0 20rpx 200rpx;
+  border: solid black 1rpx
+}

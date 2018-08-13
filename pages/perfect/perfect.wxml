@@ -1,0 +1,63 @@
+<!--pages/perfect/perfect.wxml-->
+<view class='tip'>*请完善个人信息方便管理员审核*</view>
+
+
+<view class='name'>
+<text>*姓名</text>
+<input class='namput' placeholder="请输入真实姓名"></input>
+</view>
+<view class='name'>
+<text>部门</text>
+
+
+
+<picker mode="selector" range='{{array1}}' bindchange="listenerPickerSelected"  value="{{index}}"  >
+    <view class="picker">
+    {{array[index]}}
+    <text hidden='{{phd}}' style='color:#898687'>请选择你的部门</text>
+    <image class='more' mode='aspectFit' src='../../icon/more.png'></image>
+    </view>
+  </picker>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>
+<view class='name'>
+<text>职位</text>
+<picker mode="selector" range='{{array}}' bindchange="listenerPickerSelected1"  value="{{index_}}">
+    <view class="picker">
+    {{array[index_]}}
+    <text hidden='{{phd1}}' style='color:#898687'>请选择职位名称</text>
+    <image class='more' mode='aspectFit' src='../../icon/more.png'></image>
+    </view>
+  </picker>
+
+
+
+
+
+
+
+
+
+</view>
+<view class='name'>
+<text>学号</text>
+<input class='namput' placeholder="选填"></input>
+</view>
+<button hover='ture' class='next' bindtap='next' hover-class='next1'> 下一步</button>

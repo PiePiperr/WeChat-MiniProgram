@@ -1,0 +1,17 @@
+<!--pages/user_topic/user_topic.wxml-->
+<block wx:if="{{num==0}}">
+  <view class='nocollect_'>
+    <image class='nocollect' src='../../icon/notopic.png'></image>
+    <view class='nocollecttext'>暂无关注话题</view>
+  </view>
+</block>
+
+<block wx:for="{{list}}" wx:key="index" wx:for-item="topic">
+  <view class='{{havetopic}}' bindtap='topicDetail' data-iid="{{topic.topic_id}}">
+    <image class="cover" src='{{topic.icon}}'></image>
+    <view class='list'>
+      <view class="title">{{topic.name}}</view>
+      <image src='../../icon/borrow.png' class='borrow'></image>
+    </view>
+  </view>
+</block>
