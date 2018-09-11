@@ -1,52 +1,167 @@
 // pages/industry/industry.js
 Page({
   data: {
-    MyIndustry: [],    
-    IndustryList: [
-                  { id: 1, name: '电子商务' , check: 0 }, 
-                  { id: 2, name: '医疗健康', check: 0 }, 
-                  { id: 3, name: '工具软件', check: 0 }, 
-                  { id: 4, name: '企业服务', check: 0  }, 
-                  { id: 5, name: '汽车交通', check: 0  }, 
-                  { id: 6, name: '硬件', check: 0  }, 
-                  { id: 7, name: '教育', check: 0 },
-                  { id: 8, name: '文化娱乐', check: 0 },
-                  { id: 9, name: '金融', check: 0 },
-                  { id: 10, name: '体育运动', check: 0 },
-                  { id: 11, name: '物流', check: 0 },
-                  { id: 12, name: '本地生活', check: 0 },
-                  { id: 13, name: '旅游', check: 0 },
-                  { id: 14, name: '房产服务', check: 0 },
-                  { id: 15, name: '广告营销', check: 0 },
-                  { id: 16, name: '游戏', check: 0 },
-                  { id: 17, name: '社交网络', check: 0 },
-               ],        
+    IndustryList: [{
+        id: 0,
+        name: '电子商务',
+        check: ''
+      },
+      {
+        id: 1,
+        name: '医疗健康',
+        check: ''
+      },
+      {
+        id: 2,
+        name: '工具软件',
+        check: ''
+      },
+      {
+        id: 3,
+        name: '企业服务',
+        check: ''
+      },
+      {
+        id: 4,
+        name: '汽车交通',
+        check: ''
+      },
+      {
+        id: 5,
+        name: '硬件',
+        check: ''
+      },
+      {
+        id: 6,
+        name: '教育',
+        check: ''
+      },
+      {
+        id: 7,
+        name: '文化娱乐',
+        check: ''
+      },
+      {
+        id: 8,
+        name: '金融',
+        check: ''
+      },
+      {
+        id: 9,
+        name: '体育运动',
+        check: ''
+      },
+      {
+        id: 10,
+        name: '物流',
+        check: ''
+      },
+      {
+        id: 11,
+        name: '本地生活',
+        check: ''
+      },
+      {
+        id: 12,
+        name: '旅游',
+        check: ''
+      },
+      {
+        id: 13,
+        name: '房产服务',
+        check: ''
+      },
+      {
+        id: 14,
+        name: '广告营销',
+        check: ''
+      },
+      {
+        id: 15,
+        name: '游戏',
+        check: ''
+      },
+      {
+        id: 16,
+        name: '社交网络',
+        check: ''
+      },
+      {
+        id: 17,
+        name: '农业',
+        check: ''
+      },
+    ]
   },
 
-  check: function (e) {
-    //console.log(e)
-    var that = this    
-    var item = 'IndustryList[' + e.currentTarget.dataset.index + '].check'
-    var follow = e.currentTarget.dataset.data.check == 0 ? 1 : 0;
-    that.setData({
-      [item]: follow
+  onLoad: function(e) {
+    var that = this
+    wx.getStorage({
+      key: 'MyIndustry',
+      success: function(res) {
+        console.log(res)
+        for (var j = 0; j < res.data.length; j++) {
+          for (var i = 0; i < that.data.IndustryList.length; i++) {
+            if (that.data.IndustryList[i].name == res.data[j].name) {
+              that.data.IndustryList[i].check = 1
+            }
+          }
+        }
+        that.setData({
+          IndustryList: that.data.IndustryList
+        })
+      }
     })
-  }
+  },
 
-  /*
+  check: function(e) {
+    console.log(e)
+    var that = this
+    var a = 'IndustryList[' + e.currentTarget.dataset.index + '].check'
+    var b = e.currentTarget.dataset.data.check == 0 ? 1 : 0;
+    that.setData({
+      [a]: b
+    })
+  },
 
-  for (var i = 0; i < that.data.TradeList.length; i++) {  缓存到本地
-    if (that.data.TradeList[i].check == 1) {
-      CheckedIndustry[j] = that.data.IndustryList[i]
+  checkall: function(e) {
+    var that = this
+    for (var i = 0; i < that.data.IndustryList.length; i++) {
+      that.data.IndustryList[i].check = 1
+    }
+    that.setData({
+      IndustryList: that.data.IndustryList
+    })
+  },
+
+  save: function(e) {
+    var that = this
+    var CheckedIndustry = new Array()
+    var j = 0
+    for (var i = 0; i < that.data.IndustryList.length; i++) {
+      var id = that.data.IndustryList[i].id
+      var name = that.data.IndustryList[i].name
+      if (that.data.IndustryList[i].check == 1) {
+        CheckedIndustry[j] = {
+          id,
+          name
+        }
         j++
       }
     }
+
     wx.setStorage({
-      key: 'MyIndustrys',
-      data: CheckedTrade,
+      key: 'MyIndustry',
+      data: CheckedIndustry
     })
-  } 
-  */ 
-  
+
+    wx.switchTab({
+      url: '../user/user',
+    })
+
+    that.setData({
+      industry_number: wx.getStorageSync('MyIndustry').length
+    })
+  },
 })
 

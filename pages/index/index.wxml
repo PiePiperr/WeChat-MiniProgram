@@ -8,12 +8,6 @@
   </view>
 </scroll-view>
 
-
-
-
-
-
-
 <!-- 获取列表 -->
 <view class="list">
   <block wx:for="{{list}}" wx:key="index" wx:for-item="list">

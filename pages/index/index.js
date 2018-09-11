@@ -4,15 +4,15 @@ Page({
     nav: '',
     cid: '',
     list: '',
-    item:'',
+    item: '',
     loading: true,
-    alg_group:''    
+    alg_group: ''
   },
 
   onLoad: function () {
     var that = this
-    
-    
+
+
     wx.showLoading({
       title: '加载中',
       mask: true
@@ -21,13 +21,13 @@ Page({
     wx.showModal({
       title: '提示',
       content: '您可以前往“个人中心”修改理想行业、公司等内容，订阅更准确的新闻资讯',
-      cancelText:"不，谢谢",
-      confirmText:"去设置",
+      cancelText: "不，谢谢",
+      confirmText: "去设置",
       success: function (res) {
-        if(res.confirm) {
-            wx.switchTab({
-              url: '../user/user',
-            })
+        if (res.confirm) {
+          wx.switchTab({
+            url: '../user/user',
+          })
         }
       }
     })
@@ -86,7 +86,7 @@ Page({
                     preview: false
                   },
                   success: function (e) {
-                    wx.setStorageSync('openid', e.data.data.openid)
+                    wx.setStorageSync('openid', 1234567)
                     wx.getStorage({
                       key: 'list' + that.data.cid,
                       success: function (e) {
@@ -203,7 +203,7 @@ Page({
         setTimeout(function () {
           that.setData({
             list: that.data.list.concat(e.data.data.items),
-           // alg_group: e.data.data.alg_group,
+            // alg_group: e.data.data.alg_group,
             loading: true
           })
         }, 800)
@@ -225,16 +225,16 @@ Page({
       mask: true
     })
     wx.getStorage({
-      key: 'list'+that.data.cid,
-      success: function(res) {
+      key: 'list' + that.data.cid,
+      success: function (res) {
         console.log(res)
         that.setData({
-          list:res.data,
+          list: res.data,
           //alg_group: e.data.data.alg_group
         })
         wx.hideLoading()
       },
-      fail: function(){
+      fail: function () {
         wx.request({
           url: 'https://cloud.botbrain.ai/rec/v1/RVCQS9UR56/feed/',
           data: {
@@ -258,14 +258,14 @@ Page({
 
 
   linkDetail: function (e) {
-    
+
     app.aldstat.sendEvent('查看新闻详情', '查看新闻详情')
     //console.log(e)
     wx.navigateTo({
-      url: '/pages/index_detail/index_detail?iid=' + e.currentTarget.dataset.iid + '&algs=' + e.currentTarget.dataset.algs 
+      url: '/pages/index_detail/index_detail?iid=' + e.currentTarget.dataset.iid + '&algs=' + e.currentTarget.dataset.algs
       //+ '&alg_group=' + e.currentTarget.dataset.alg_group
     })
-  
+
   },
   Linksearch: function (e) {
 
@@ -292,8 +292,8 @@ Page({
     }
   },
 
-  onPullDownRefresh: function(){
-    var that=this
+  onPullDownRefresh: function () {
+    var that = this
     wx.showLoading({
       title: '更新中',
       mask: true
@@ -309,7 +309,7 @@ Page({
         setTimeout(function () {
           that.setData({
             list: e.data.data.items,
-           // alg_group: e.data.data.alg_group
+            // alg_group: e.data.data.alg_group
           })
           wx.stopPullDownRefresh()
           wx.hideLoading()
@@ -340,7 +340,7 @@ Page({
         setTimeout(function () {
           that.setData({
             list: e.data.data.items,
-           // alg_group: e.data.data.alg_group
+            // alg_group: e.data.data.alg_group
           })
           wx.hideLoading()
           wx.showToast({

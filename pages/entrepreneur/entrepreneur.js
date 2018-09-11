@@ -1,55 +1,63 @@
 // pages/entrepreneur/entrepreneur.js
 Page({
-
-
   data: {
     nextPage: 2,
     keyWord: '',
     loadingIconHidden: true,
     noResultHidden: true,
     inputText: '',
-    myCompany: [],
+    myentre: [],
     SearchResult: '',
-    comp_List: true,
+    entre_List: true,
     searResult: false,
     search: true,
-    // companyList:[
-
-    //   { id: 1, name: '蚂蚁金服' }, { id: 2, name: '阿里云' }, { id: 3, name: '滴滴出行' }, { id: 4, name: '陆金所' }, { id: 5, name: '美团点评集团' }, { id: 6, name: '今日头条' }, { id: 7, name: '腾讯娱乐' }
-
-
-    // ],
-
-    companyList: [
-
-      '吴家', '阎焱 ', '周全', '赵令欢', '王刚 ', '张帆', '林栋梁 '
-
-
-    ]
-
-
-    ,
+    EntreList: ['吴家', '阎焱 ', '周全', '赵令欢', '王刚 ', '张帆', '林栋梁 '],
   },
 
-
-  onLoad: function (e) {
-
-
-  },
-  bindfocus: function (e) {
-    this.setData({
-
-      comp_List: false
+  onLoad: function(e) {
+    var that = this
+    wx.getStorage({
+      key: 'MyEntre',
+      success: function(res) {
+        console.log(res.data[0])
+        for (var i = 0; i < res.data.length; i++) {
+          for (var j = 0; j < that.data.EntreList.length; j++) {
+            if (res.data[i] == that.data.EntreList[j]) {
+              that.setData({
+                myentre: res.data
+              })
+            }
+          }
+        }
+      },
     })
   },
-  bindKeyInput: function (e) {
+
+  save: function(e) {
+    var that = this
+    wx.setStorage({
+      key: 'MyEntre',
+      data: that.data.myentre
+    })
+    wx.switchTab({
+      url: '../user/user',
+    })
+  },
+
+  bindfocus: function(e) {
+    this.setData({
+
+      entre_List: false
+    })
+  },
+  bindKeyInput: function(e) {
     this.setData({
       inputText: e.detail.value,
 
 
     })
   },
-  searchCompany: function (e) {
+  Search_Entre: function(e) {
     var that = this
 
     var inputText = e.detail.value
@@ -65,9 +73,9 @@ Page({
     })
     that.getSearchResult()
   },
-  clcSearchCompany: function (e) {
+  clcSearch_entre: function(e) {
     this.setData({
-      comp_List: true,
+      entre_List: true,
       searResult: false,
       search: true,
       inputText: '',
@@ -78,37 +86,35 @@ Page({
   },
 
 
-  getSearchResult: function () {
+  getSearchResult: function() {
     var that = this
-    var index = that.data.companyList.indexOf(that.data.keyWord)
+    var index = that.data.EntreList.indexOf(that.data.keyWord)
 
     console.log(that.data.keyWord)
     if (index >= 0) {
       that.setData({
         searResult: true,
-        comp_List: false,
+        entre_List: false,
         searchResult: that.data.keyWord
       })
 
-    }
-
-    else {
+    } else {
       that.setData({
         noResultHidden: false
       })
     }
 
   },
-  chooseResult: function (e) {
+  chooseResult: function(e) {
     that.setData({
       searResult: true,
-      comp_List: false,
+      entre_List: false,
       searchResult: that.data.keyWord
     })
   },
-  onReachBottom: function (e) {
+  onReachBottom: function(e) {
     var that = this
-    if (that.data.companyList.length == 0) {
+    if (that.data.EntreList.length == 0) {
       return
     }
     that.setData({
@@ -121,7 +127,7 @@ Page({
         keyword: that.data.keyWord,
         st: that.data.nextPage
       },
-      success: function (e) {
+      success: function(e) {
         if (e.data.data.items.length == 0) {
           wx.showToast({
             title: '无更多内容',
@@ -131,9 +137,8 @@ Page({
           that.setData({
             loadingIconHidden: true
           })
-        }
-        else {
-          setTimeout(function () {
+        } else {
+          setTimeout(function() {
             that.setData({
               newsList: that.data.newsList.concat(e.data.data.items),
               nextPage: that.data.nextPage + 1,
@@ -144,25 +149,20 @@ Page({
       }
     })
   },
-  choose: function (e) {
+  choose: function(e) {
     console.log(e)
     var that = this
 
-    var index = that.data.myCompany.indexOf(e.currentTarget.dataset.id);
+    var index = that.data.myentre.indexOf(e.currentTarget.dataset.id);
     if (index >= 0) {
       wx.showModal({
         title: '提示',
         content: '您已关注该企业家！',
       })
-    }
-
-
-
-
-    else {
+    } else {
 
       that.setData({
-        myCompany: that.data.myCompany.concat(e.currentTarget.dataset.id)
+        myentre: that.data.myentre.concat(e.currentTarget.dataset.id)
 
 
       })
@@ -170,13 +170,13 @@ Page({
 
 
   },
-  delete: function (e) {
+  delete: function(e) {
     console.log(e.currentTarget.dataset.index)
     var that = this
-    that.data.myCompany.splice(e.currentTarget.dataset.index, 1)
+    that.data.myentre.splice(e.currentTarget.dataset.index, 1)
 
     that.setData({
-      myCompany: that.data.myCompany
+      myentre: that.data.myentre
     })
 
   }

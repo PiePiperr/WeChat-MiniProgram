@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.0",
 	"appid": "wxe4fac813a0d128d3",
-	"projectname": "%E8%BF%AD%E4%BB%A32.2",
+	"projectname": "%E4%B8%AA%E4%BA%BA%E5%9F%B9%E5%85%BB%E8%AE%A1%E5%88%92",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 15,
+			"current": 20,
 			"list": [
 				{
 					"id": 0,
@@ -123,7 +123,38 @@
 				{
 					"id": -1,
 					"name": "首页",
-					"pathName": "pages/index/index"
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的行业",
+					"pathName": "pages/industry/industry",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "公司",
+					"pathName": "pages/company/company",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业家",
+					"pathName": "pages/entrepreneur/entrepreneur",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "入学考试",
+					"pathName": "pages/exam/exam",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "笔试",
+					"pathName": "pages/level1/level1",
+					"query": ""
 				}
 			]
 		}

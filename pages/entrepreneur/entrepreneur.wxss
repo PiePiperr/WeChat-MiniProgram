@@ -1,104 +1,80 @@
-
-.save{
-   width:120rpx;
-height:60rpx;
-line-height:60rpx;
-float:right;
-margin:25rpx;
-font-size: 26rpx;
-border: 1rpx solid #17AFF8;
-color: #17AFF8;
-background-color: white
-
-
-
-}
-.page{
-  padding: 0 20rpx
-}
-.tip{
-border-bottom:2rpx solid #cfcfcf;
-font-size:28rpx;
-padding:25rpx 0rpx 44rpx;
-margin:10rpx 18rpx;
-width:95%;
-
-
-}
-.text{
-  margin:19rpx;
-font-size:32rpx;
-font-weight:bold;
-
-}
-.none{
-  font-size:32rpx;
-margin:20rpx 20rpx 0
-}
-.ch_company{
- border-bottom:0.5px solid #cfcfcf;
-font-size:34rpx;
-padding-bottom:20rpx;
-margin:10rpx;
-
-
-}
-.my_company{
-width:125rpx;
-height:54rpx;
-line-height:54rpx;
-border-radius:6rpx;
-font-size:28rpx;
-text-align:center;
-display:inline-block;
-margin:0px 25rpx;
-overflow:hidden;
-color:#F5A623;
-background-color:#fef7e8
-
-
-}
-.delete{
- width:23rpx;
-height:23rpx;
-
-
+.save {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: right;
+  margin: 25rpx;
+  font-size: 26rpx;
+  border: 1rpx solid #17aff8;
+  color: #17aff8;
+  background-color: white;
 }
 
+.page {
+  padding: 0 20rpx;
+}
+
+.tip {
+  border-bottom: 2rpx solid #cfcfcf;
+  font-size: 28rpx;
+  padding: 25rpx 0rpx 44rpx;
+  margin: 10rpx 18rpx;
+  width: 95%;
+}
+
+.text {
+  margin: 19rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.none {
+  font-size: 32rpx;
+  margin: 20rpx 20rpx 0;
+}
+
+.ch_entre {
+  border-bottom: 0.5px solid #cfcfcf;
+  font-size: 34rpx;
+  padding-bottom: 20rpx;
+  margin: 10rpx;
+}
+
+.my_entre {
+  width: 125rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  text-align: center;
+  display: inline-block;
+  margin: 0px 25rpx;
+  overflow: hidden;
+  color: #f5a623;
+  background-color: #fef7e8;
+}
+
+.delete {
+  width: 23rpx;
+  height: 23rpx;
+}
 
 .searchArea {
-  margin-top:20rpx;
-
- 
+  margin-top: 20rpx;
   display: flex;
   justify-content: center;
-  
 }
 
 .searchInput {
-  
   background-color: white;
- 
-  padding:0 5rpx 20rpx;
-
-
-
-width: 290px;
-height: 50rpx;
-
-border-radius: 20rpx;
-color: rgba(16, 16, 16, 1);
-font-size: 14px;
-text-align: left;
-border: 1px solid rgba(187, 187, 187, 1);
-
-
-
-
-
-
-
-
+  padding: 0 5rpx 20rpx;
+  width: 290px;
+  height: 50rpx;
+  border-radius: 20rpx;
+  color: rgba(16, 16, 16, 1);
+  font-size: 14px;
+  text-align: left;
+  border: 1px solid rgba(187, 187, 187, 1);
 }
 
 .searchInput image {
@@ -117,7 +93,6 @@ border: 1px solid rgba(187, 187, 187, 1);
   line-height: 56rpx;
 }
 
-
 .loading image {
   height: 40rpx;
   width: 40rpx;
@@ -132,28 +107,25 @@ border: 1px solid rgba(187, 187, 187, 1);
   font-weight: bold;
 }
 
-
 .clearSearch {
-  color:#576B95;
-font-size:32rpx;
-line-height:85rpx;
-margin-left:25rpx;
+  color: #576b95;
+  font-size: 32rpx;
+  line-height: 85rpx;
+  margin-left: 25rpx;
 }
-.noResult{
 
-color: rgba(16, 16, 16, 1);
-font-size: 32rpx;
-text-align: center;
-
-
+.noResult {
+  color: rgba(16, 16, 16, 1);
+  font-size: 32rpx;
+  text-align: center;
 }
-.companyList{
-  margin: 20rpx 40rpx
+
+.entreList {
+  margin: 20rpx 40rpx;
 }
-.company{
+
+.entre {
   height: 70rpx;
-  font-size:32rpx;
-  color: #666666
-
- 
+  font-size: 32rpx;
+  color: #666;
 }

@@ -1,66 +1,49 @@
-/* pages/industry/industry */
-.btn_all {
-  width: 150rpx;
-  height: 64rpx;
-  border-radius: 10rpx;
+.IndustryList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 15rpx;
+  z-index: 1
+}
+
+.btn0{
+  margin: 50rpx 0 25rpx 40rpx;
+  width: 185rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
   background-color: white;
-  margin-top: 40rpx;   
-  margin-left: 30rpx;      
-  font-size: 30rpx;   
-  text-align: center;  
-  line-height: 54rpx;
-  padding-left: 6rpx;
-  padding-right: 6rpx;
+  color:#17AFF8;
+  border-style: solid;
+  border-color: #17AFF8;
+  border-width: thin;
+  border-radius: 10rpx
 }
 
-.btn1 {
-  margin-top: 25rpx;   
+.btn{
+  width: 185rpx;
+  height: 80rpx;
+  margin: 25rpx 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-style: solid;
+  border-color: #17AFF8;
+  border-width: thin;
+  border-radius: 10rpx
 }
 
-.btn2 {
-  width: 150rpx; 
-  height: 64rpx;
-  border-radius: 10rpx;        
+.btn2{
   display: inline-block; 
-  padding-left: 6rpx;
-  padding-right: 6rpx;  
-  margin-top: 30rpx;
-  margin-left: 31rpx;   
-  font-size: 30rpx; 
-  text-align: center;  
- 
+  position: absolute; 
+  bottom: 40rpx; 
+  right: 35rpx; 
+  width: 300rpx;
+  height: 100rpx; 
+  margin:0; 
+  font-size: 40rpx;
+  border-style: solid;
+  border-color: #17AFF8;
+  border-width: thin;
+  border-radius: 10rpx
 }
-
-.txt{
-  font-size: 32rpx;
-  color: #333333;
-  margin-top: 40rpx; 
-  margin-left: 30rpx; 
-}
-
-.section{
-  width: 88%;
-  height: 233rpx;
-  border: 1px solid #979797;
-  border-radius: 20rpx;  
-  margin-top: 20rpx;    
-  margin-left: 30rpx;   
-  font-size:32rpx;
-  padding-left: 20rpx;
-}
-
-.save{
-  width: 690rpx;
-  height: 94rpx;  
-  background-color: #17AFF8;
-  border-radius: 10px; 
-  margin-top: 30rpx;   
-  font-size: 36rpx; 
-  color: white;
-  line-height: auto; 
-}
-
-
-
-
-

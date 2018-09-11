@@ -5,17 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-phd: false,
-phd1: false,
-org:'',
-index:0,
-index_:0,
+    phd: false,
+    phd1: false,
+    org: '',
+    index: 0,
+    index_: 0,
 
-section:[],
-    
-    
+    section: [],
 
-  //array: ['12','123'],
+
+
+    //array: ['12','123'],
     // objectArray: [
     //   {
     //     id: 0,
@@ -29,10 +29,10 @@ section:[],
     //     id: 2,
     //     name: '营销组'
     //   },
-      
+
     // ],
 
-   array1: ['产品经理', '小程序开发', 'UI设计','后端开发','网站运维','视频剪辑'],
+    array1: ['产品经理', '小程序开发', 'UI设计', '后端开发', '网站运维', '视频剪辑'],
     // objectArray: [
     //   {
     //     id: 0,
@@ -60,57 +60,57 @@ section:[],
     //   },
 
     // ],
-   
 
-  
+
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this
     var array = new Array
-   
+
     var j = 0
     wx.request({
       url: 'https://luxq.botbrain.ai/org/RVCQS9UR56/info',
       data: {
         osKey: 'RVCQS9UR56'
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data.data.posts)
         that.setData({
-          org : res.data.data.posts
+          org: res.data.data.posts
         })
 
         for (var i = 0; i < that.data.org.length; i++) {
-          
-         array[j] = that.data.org[i].name
-                   j++
-           
 
-          
+          array[j] = that.data.org[i].name
+          j++
+
+
+
         }
-        
-        
-    
-       // console.log(section[0])
-      
+
+
+
+        // console.log(section[0])
+
       }
     })
   },
 
-  listenerPickerSelected: function (e) {
+  listenerPickerSelected: function(e) {
     //改变index值，通过setData()方法重绘界面
     console.log(e)
     this.setData({
       index: e.detail.value,
-      phd:true
-      
+      phd: true
+
     });
   },
-  listenerPickerSelected1: function (e) {
+  listenerPickerSelected1: function(e) {
     //改变index值，通过setData()方法重绘界面
     console.log(e)
     this.setData({
@@ -119,7 +119,7 @@ section:[],
 
     });
   },
-  next:function(e){
+  next: function(e) {
     console.log(e)
     wx.switchTab({
       url: '/pages/user/user'

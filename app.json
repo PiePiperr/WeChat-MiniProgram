@@ -9,14 +9,16 @@
     "pages/search/search",
     "pages/user/user",
     "pages/user_collect/user_collect",
-    "pages/user_work/user_work",
     "pages/user_topic/user_topic",
     "pages/user_feedback/user_feedback",
     "pages/find/find",
     "pages/phone/phone",
     "pages/perfect/perfect",
-    "pages/topicdetail/topicdetail"
-    
+    "pages/topicdetail/topicdetail",
+    "pages/exam/exam",
+    "pages/level1/level1",
+    "pages/level2/level2",
+    "pages/level3/level3"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -48,5 +50,19 @@
     "color": "#bfbfbf",
     "selectedColor": "#17aff8",
     "borderStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 30000,
+    "uploadFile": 30000,
+    "downloadFile": 30000
+  },
+  "debug": true,
+
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.1.8",
+      "provider": "wxa75efa648b60994b"
+    }
   }
 }

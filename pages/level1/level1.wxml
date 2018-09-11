@@ -1,0 +1,11 @@
+<!--pages/level1/level1.wxml-->
+<view class='header'>笔试</view>
+<view class='header'>笔试考试前请前观看5节基础课视频</view>
+<view class='header'>课程链接</view>
+<view class='header'>笔试内容：个人培养方案</view>
+<!-- <view data-url="这是文档下载地址" data-type="pdf" catchtap='downloadFile'></view> -->
+<!-- <view class="page-body">
+  <view class="page-section page-section-gap">
+    <web-view src="http://cn.mikecrm.com/5PPGOOB"></web-view>
+  </view>
+</view> -->

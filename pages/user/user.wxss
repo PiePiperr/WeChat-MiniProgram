@@ -1,8 +1,9 @@
-page{
+page {
   display: block;
   min-height: 100%;
-  background-color: #e7e7e7
+  background-color: #e7e7e7;
 }
+
 .login {
   margin: 65rpx 40rpx;
 }
@@ -15,134 +16,150 @@ page{
   display: none;
 }
 
-.userInfo1 {
-  display: inline-block;
-  width: 100%;
-  height: auto;
-  margin: 10rpx auto;
-  background-color: white
-}
-
-.user{
-  display: block;
-  position: relative;
-  width: 95%;
-  height: 240rpx;
-  margin: 20rpx auto 0;
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+  height: 350rpx;
   background-color: #14aff8;
-  border-radius: 20rpx
+  z-index: 8
 }
 
 /* 用户头像 */
+
 .avatar {
-  display: inline-block;
-  width: 180rpx;
-  height: 180rpx;
+  flex-shrink: 0;
+  width: 200rpx;
+  height: 200rpx;
   border-radius: 50%;
   border: 10rpx solid white;
   margin: 20rpx 40rpx;
 }
 
+.user {
+  width: auto;
+}
+
 /* 用户姓名 */
+
 .name {
-  display: block;
-  position: absolute;
-  top:20%;
-  left:40%;
-  text-align: center;
+  margin-top: 50rpx;
   font-size: 40rpx;
-  color:white;
+  color: white;
 }
 
 /* 所属部门 */
-.section{
+.section {
   display: block;
-  position: absolute;
-  top:30%;
-  left:40%;
-  text-align: center;
+  margin: 30rpx 0 20rpx 10rpx;
   font-size: 40rpx;
-  color:black;
+  color: white;
 }
 
-.careers{
-  display: block;
-  position: absolute;
-  top:55%;
-  left:40%;
-  text-align: center;
-  font-size: 30rpx;
-  color:white;
+.max{
+  margin-top: 50rpx;
+  height: 0;
+  width: 400rpx;
+  border-bottom: gray solid 7rpx
 }
 
-.trainingplan{
+.progressbar{
+  border-bottom: white solid 7rpx
+}
+
+.userInfo1 {
+  position: relative;
+  width: 95%;
+  height: auto;
+  margin: -100rpx auto 0;
+  padding:10rpx 10rpx 20rpx 0;
+  background-color: white;
+  box-shadow: 0 0 10rpx black;
+  border-radius: 20rpx;
+  z-index: 9
+}
+
+.trainingplan {
+  width: inherit;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: nowrap;
   position: relative;
-  width: 96%;
-  height: 200rpx;
-  margin: 20rpx auto 5rpx;
+  margin: 20rpx auto 0;
   background-color: white;
 }
 
-.trainingplan1{
-  display: block;
-  position: relative;
-  width: 33%;
-  height: auto;
-  margin: 5rpx;
-}
-.text1{
+.item {
   display: flex;
-  justify-content: center;
+  flex-wrap:wrap;
+  flex-grow: 1;
   align-items: center;
-  margin-top:5%;
-  font-size: 35rpx;
+  margin-left:10rpx;
+  z-index: 10
 }
 
-.number{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
-  font-size: 45rpx;
-}
-
-.border{
+.text1 {
   display: block;
-  position: absolute;
-  top: 35%;
-  left: 33%;
-  width: 33%;
-  height: 25%;
-  border-left: solid #14aff8 4rpx;
-  border-right: solid #14aff8 4rpx;
-}
-
-.warning{
-  display: block;
-  position: absolute;
+  width: 150rpx;
+  text-align: center;
   font-size: 30rpx;
-  bottom: 2%;
-  right: 5%
+}
+.number {
+  flex-grow: 1;
+  width: 150rpx;
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bolder
 }
 
-.userInfo2{
-  display: block;
+.border {
+  position: absolute;
+  top: 20rpx;
+  width: 25%;
+  height: 50rpx;
+  border-left: solid #e7e7e7 4rpx;
+}
+/* 职业方向 */
+.checkbox {
+  height: auto;
+  width: 90%;
+  flex-wrap: nowrap;
+  margin: 30rpx auto 0;
+  padding: 10rpx 0 0 40rpx;
+  border-top: solid #e7e7e7 3rpx;
+  background-color: white;
+}
+
+.checkbox2 {
+  margin: 10rpx 20rpx;
+  font-size: 25rpx;
+}
+
+.save{
+  display: inline-flex;
+  width: auto;
+  margin:0 0 -20rpx 40rpx;
+  font-size: 25rpx;
+}
+
+.userInfo2 {
+  position: relative;
   width: 100%;
   height: auto;
-  border-radius: 10rpx;
-  background-color: white
+  padding-top: 150rpx;
+  margin-top: -140rpx;
+  background-color: white;
+  z-index: -1
 }
 
 .my {
   display: block;
-  width: 100%;
+  width: inherit;
   line-height: 80rpx;
   font-size: 30rpx;
   height: 80rpx;
-  border-bottom: 2px solid #e7e7e7;
   background-color: white;
   margin: 0 auto;
 }
@@ -160,7 +177,7 @@ page{
   width: 35rpx;
   float: left;
   padding-right: 20rpx;
-  margin: 20rpx 40rpx 0 40rpx
+  margin: 20rpx 40rpx 0 40rpx;
 }
 
 .borrow {
@@ -170,12 +187,20 @@ page{
   margin: 20rpx 40rpx 0 0;
 }
 
-.text2{
+.text2 {
   display: inline-block;
   margin: auto;
-  align-items: center
+  font-size: 30rpx;
+  align-items: center;
 }
-
+.userInfo3 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 10rpx auto 0;
+  padding: 10rpx 0;
+  background-color: white;
+}
 button[type=primary] {
   color: #fff;
   background-color: #14aff8;
@@ -187,31 +212,27 @@ button[type=primary] {
   margin: 0 80rpx;
   font-size: 30rpx;
 }
-.phone{
-  position:fixed;
-  color:white;
-  top:276rpx;
-  left:590rpx;
-  border:1px solid white;
-  border-radius:90rpx;
-  width:140rpx;
-  font-size:30rpx;
-  text-align:center;
-  line-height:50rpx;
+
+.phone {
+  position: fixed;
+  color: white;
+  top: 276rpx;
+  left: 590rpx;
+  border: 1px solid white;
+  border-radius: 90rpx;
+  width: 140rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 50rpx;
 }
 
-.aboutus{
+.aboutus {
   display: block;
   width: 100%;
-  height: auto;
-  margin-top: 10rpx;
-  background-color: white
-}
-
-.QRcode{
-  display: inline-block;
-  width: 150rpx;
-  height: 150rpx;
-  margin: 20rpx 0 20rpx 200rpx;
-  border: solid black 1rpx
+  line-height: 80rpx;
+  font-size: 30rpx;
+  height: 80rpx;
+  border-bottom: 2px solid #e7e7e7;
+  background-color: white;
+  margin: 0 auto;
 }

@@ -6,8 +6,8 @@
 
 <view class='IndustryList'>
   <block wx:for="{{IndustryList}}" wx:key="index">
-    <button wx:if='{{item.check==0}}' bindtap="check" class="btn" data-Index="{{index}}" data-data='{{item}}' style="background-color:white; color:#17AFF8" >{{item.name}}</button>
-    <button wx:if='{{item.check==1}}' bindtap="check" class="btn" data-Index="{{index}}" data-data='{{item}}' style="background-color:#17AFF8; color:white" >{{item.name}}</button>
+    <button wx:if='{{item.check==0}}' bindtap="check" class="btn" data-Index="{{index}}" data-data='{{item}}' style="background-color:white; color:#17AFF8">{{item.name}}</button>
+    <button wx:if='{{item.check==1}}' bindtap="check"class="btn" data-Index="{{index}}" data-data='{{item}}' style="background-color:#17AFF8; color:white">{{item.name}}</button>
   </block>
 </view>
 
