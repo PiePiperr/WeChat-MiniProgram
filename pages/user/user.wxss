@@ -5,28 +5,15 @@ page {
 }
 
 .login {
-  margin: 65rpx 40rpx;
+  margin: 20rpx auto;
 }
 
-.show {
-  display: block;
-}
 
 .hide {
   display: none;
 }
 
-.header {
-  display: flex;
-  flex-wrap: nowrap;
-  width: auto;
-  height: 350rpx;
-  background-color: #14aff8;
-  z-index: 8
-}
-
 /* 用户头像 */
-
 .avatar {
   flex-shrink: 0;
   width: 200rpx;
@@ -49,6 +36,7 @@ page {
 }
 
 /* 所属部门 */
+
 .section {
   display: block;
   margin: 30rpx 0 20rpx 10rpx;
@@ -56,15 +44,26 @@ page {
   color: white;
 }
 
-.max{
+.max {
   margin-top: 50rpx;
   height: 0;
   width: 400rpx;
-  border-bottom: gray solid 7rpx
+  border-bottom: gray solid 7rpx;
 }
 
-.progressbar{
-  border-bottom: white solid 7rpx
+.progressbar {
+  border-bottom: white solid 7rpx;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  flex-wrap: nowrap;
+  width: auto;
+  height: 350rpx;
+  margin-bottom: -50rpx;
+  background-color: #14aff8;
+  z-index: 2;
 }
 
 .userInfo1 {
@@ -72,14 +71,24 @@ page {
   width: 95%;
   height: auto;
   margin: -100rpx auto 0;
-  padding:10rpx 10rpx 20rpx 0;
+  padding: 10rpx 10rpx 20rpx 0;
   background-color: white;
   box-shadow: 0 0 10rpx black;
   border-radius: 20rpx;
-  z-index: 9
+  z-index: 2;
 }
 
-.trainingplan {
+.userInfo2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 190rpx;
+  margin-top: -190rpx;
+  background-color: white;
+  z-index: 0;
+}
+
+.interested {
   width: inherit;
   height: auto;
   display: flex;
@@ -88,30 +97,30 @@ page {
   flex-wrap: nowrap;
   position: relative;
   margin: 20rpx auto 0;
-  background-color: white;
 }
 
 .item {
   display: flex;
-  flex-wrap:wrap;
+  width: 25%;
+  flex-wrap: wrap;
   flex-grow: 1;
   align-items: center;
-  margin-left:10rpx;
-  z-index: 10
+  margin-left: 10rpx;
 }
 
 .text1 {
   display: block;
-  width: 150rpx;
+  width: 100%;
   text-align: center;
   font-size: 30rpx;
 }
+
 .number {
   flex-grow: 1;
-  width: 150rpx;
+  width: 100%;
   text-align: center;
   font-size: 35rpx;
-  font-weight: bolder
+  font-weight: bolder;
 }
 
 .border {
@@ -120,8 +129,11 @@ page {
   width: 25%;
   height: 50rpx;
   border-left: solid #e7e7e7 4rpx;
+  z-index: -1
 }
+
 /* 职业方向 */
+
 .checkbox {
   height: auto;
   width: 90%;
@@ -137,21 +149,11 @@ page {
   font-size: 25rpx;
 }
 
-.save{
+.save {
   display: inline-flex;
   width: auto;
-  margin:0 0 -20rpx 40rpx;
+  margin: 0 0 -20rpx 10rpx;
   font-size: 25rpx;
-}
-
-.userInfo2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-top: 150rpx;
-  margin-top: -140rpx;
-  background-color: white;
-  z-index: -1
 }
 
 .my {
@@ -193,6 +195,7 @@ page {
   font-size: 30rpx;
   align-items: center;
 }
+
 .userInfo3 {
   position: relative;
   width: 100%;
@@ -201,6 +204,7 @@ page {
   padding: 10rpx 0;
   background-color: white;
 }
+
 button[type=primary] {
   color: #fff;
   background-color: #14aff8;

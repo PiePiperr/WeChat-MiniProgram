@@ -1,4 +1,4 @@
-var app = getApp();
+// var app = getApp();
 Page({
   data: {
     buttonStatus: 'hide',
@@ -12,82 +12,62 @@ Page({
     section: true,
     bindphone: false,
     choose: 'hide',
-    industry_number: 0,
-    company_number: 0,
-    entre_number: 0,
-    career_number: 0,
+    industry_number: '0',
+    company_number: '0',
+    entre_number: '0',
+    career_number: '0',
     barlength: '0%',
     items: [{
-      name: 'engineering',
+      name: '1',
       value: '技术',
-      checked: 'false'
     }, {
-      name: 'product',
+      name: '2',
       value: '产品',
-      checked: 'false'
     }, {
-      name: 'marketing',
-      value: '市场营销',
-      checked: 'false'
-
+      name: '3',
+      value: '营销',
     }]
   },
 
   onLoad: function() {
     var that = this
-    that.setData({
-      career_number: wx.getStorageSync('MyCareer').length
-    })
+
     //获取openid
     wx.login({
       success: function(res) {
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'https://luxq.botbrain.ai/wx/login', //https://bkd.botbrain.ai/wx/auth/login.json
-            method: 'Post', //http://localhost:8080/wx/login
+            url: 'https://wxapp.proflu.cn/vipSystem/wxapp/wxuser/wxlogin',
             data: {
-              // appid: 'RVCQS9UR56',
-              jsCode: res.code,
-              // preview: false
+              jsCode: res.code
             },
-            success: function(res) {
-              console.log('+++++++++++++++++++')
-              console.log(res) //1
+            success: function(e) {
+              console.log(e)
               that.setData({
-                openid: res.data.data.openid,
-                uid: res.data.data.uid,
-                sign: res.data.data.sign,
+                uid: e.data.uid
               })
-
-              wx.getUserInfo({
-                success: function(res) {
-                  console.log('---------------------')
-                  console.log(res) //2
-                  wx.request({
-                    url: 'https://luxq.botbrain.ai/user/info',
-                    data: {
-                      sign: that.data.sign,
-                      uid: that.data.uid,
-                      //session_key: that.data.sessionkey,
-                      openid: that.data.openid,
-                      user_name: res.userInfo.nickName,
-                      icon: res.userInfo.avatarUrl,
-                      gender: res.userInfo.gender,
-                      //sign: res.data.data.sign,
-
-                    },
-                    method: 'Post',
-                    success: function(res) {
-                      //console.log(that.data.sessionkey)
-                      console.log(res) //3
-                      that.setData({
-                        sign: res.data.data.sign,
-                      })
-                    }
-                  })
+              wx.setStorage({
+                key: 'uid',
+                data: e.data.uid,
+              })
+              wx.setStorage({
+                key: 'uid_time',
+                data: Date.parse(new Date()),
+              })
+              //查修计划
+              wx.request({
+                url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/queryPlanInfo',
+                data: {
+                  uid: wx.getStorageSync('uid')
+                },
+                success: function(e) {
+                  console.log(e)
                 }
               })
+            },
+            fail: function(e) {
+              console.log(e)
             }
           })
         } else {
@@ -98,8 +78,6 @@ Page({
     wx.getStorage({
       key: 'MyCareer',
       success: function(res) {
-        console.log(res.data[0], res.data[1], res.data[2])
-        console.log(that.data.items[0].name)
         for (var j = 0; j < 3; j++) {
           for (var i = 0; i < 3; i++) {
             if (res.data[i] == that.data.items[j].name) {
@@ -112,11 +90,31 @@ Page({
         })
       },
     })
+
   },
-  getUserInfo: function(e) {
+  getUserInfoButton: function(e) {
     console.log(e)
     // app.aldstat.sendEvent('个人中心', '授权登录')
     var that = this
+    var user = e.detail.userInfo
+    wx.request({
+      url: 'https://wxapp.proflu.cn/vipSystem/wxapp/wxuser/updateWxUserInfo',
+      data: {
+        user_name: user.nickName,
+        icon: user.avatarUrl,
+        gender: user.gender,
+        // gender: '4',
+        city: user.city,
+        province: user.province,
+        uid: that.data.uid
+      },
+      success: function(e) {
+        console.log(e)
+      },
+      fail: function(e) {
+        console.log(e)
+      }
+    })
     wx.setStorage({
       key: 'userInfo',
       data: e.detail.userInfo,
@@ -157,7 +155,6 @@ Page({
 
   checkboxChange: function(e) {
     var that = this
-    console.log(e)
     wx.setStorage({
       key: 'MyCareer',
       data: e.detail.value
@@ -172,11 +169,34 @@ Page({
     wx.getStorage({
       key: 'MyCareer',
       success: function(res) {
+        console.log(res)
         that.setData({
-          career_number: res.data.length
+          career_number: res.data.length,
+        })
+        var a = that.data.industry_number
+        var b = that.data.career_number
+        var c = that.data.company_number
+        var d = that.data.entre_number
+        that.setData({
+          barlength: (((a > 0) ? 1 : 0) + ((b > 0) ? 1 : 0) + ((c > 0) ? 1 : 0) + ((d > 0) ? 1 : 0)) * 25 + "%"
+        })
+        wx.setStorage({
+          key: 'Barlength',
+          data: that.data.barlength,
+        })
+        wx.request({
+          url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/updateCareer',
+          data: {
+            uid: wx.getStorageSync('uid'),
+            id: res.data.toString()
+          },
+          success: function(e) {
+            console.log(e)
+          }
         })
       },
     })
+
   },
 
   //绑定手机
@@ -188,40 +208,99 @@ Page({
   },
   //查看我的收藏
   linkCollect: function(e) {
-    app.aldstat.sendEvent('查看我的收藏', '查看我的收藏')
+    // app.aldstat.sendEvent('查看我的收藏', '查看我的收藏')
     wx.navigateTo({
       url: '/pages/user_collect/user_collect'
     })
   },
   //查看我的话题
   linkTopic: function(e) {
-    app.aldstat.sendEvent('查看我的话题', '查看我的话题')
+    // app.aldstat.sendEvent('查看我的话题', '查看我的话题')
     wx.navigateTo({
       url: '/pages/user_topic/user_topic'
     })
   },
+  //查看我的作品
+  linkWork: function(e) {
+    // app.aldstat.sendEvent('查看我的作品', '查看我的作品')
+    wx.navigateTo({
+      url: '/pages/user_work/user_work'
+    })
+  },
   //意见反馈
   feedBack: function(e) {
-    app.aldstat.sendEvent('意见反馈', '意见反馈')
+    // app.aldstat.sendEvent('意见反馈', '意见反馈')
     wx.navigateTo({
       url: '/pages/user_feedback/user_feedback'
     })
   },
   //入学考试
   exam: function(e) {
-    console.log(e)
     wx.navigateTo({
-      url: '/pages/exam/exam'
+      url: '../exam/exam'
+    })
+  },
+
+  lesson: function (e) {
+    wx.navigateTo({
+      url: '../user_lesson/user_lesson'
     })
   },
 
 
   onShow: function() {
     var that = this
+    that.setData({
+      industry_number: wx.getStorageSync('MyIndustry').length,
+      career_number: wx.getStorageSync('MyCareer').length,
+    })
     var a = that.data.industry_number
     var b = that.data.career_number
-    var c = that.data.company_number
-    var d = that.data.entre_number
+    that.setData({
+      barlength: (((a > 0) ? 1 : 0) + ((b > 0) ? 1 : 0)) * 25 + "%"
+    })
+    wx.setStorage({
+      key: 'Barlength',
+      data: that.data.barlength,
+    })
+
+    wx.getStorage({
+      key: 'MyCompany',
+      success: function(res) {
+        that.setData({
+          company_number: res.data.id.length,
+        })
+        var c = that.data.company_number
+        that.setData({
+          barlength: (((a > 0) ? 1 : 0) + ((b > 0) ? 1 : 0) + ((c > 0) ? 1 : 0)) * 25 + "%"
+        })
+        wx.setStorage({
+          key: 'Barlength',
+          data: that.data.barlength,
+        })
+      },
+      fail: function(e) {}
+    })
+
+    wx.getStorage({
+      key: 'MyEntrepreneur',
+      success: function(res) {
+        that.setData({
+          entre_number: res.data.id.length,
+        })
+        var c = that.data.company_number
+        var d = that.data.entre_number
+        that.setData({
+          barlength: (((a > 0) ? 1 : 0) + ((b > 0) ? 1 : 0) + ((c > 0) ? 1 : 0) + ((d > 0) ? 1 : 0)) * 25 + "%"
+        })
+        wx.setStorage({
+          key: 'Barlength',
+          data: that.data.barlength,
+        })
+      },
+      fail: function(e) {}
+    })
+
     wx.getStorage({
       key: 'userInfo',
       success: function(res) {
@@ -238,22 +317,45 @@ Page({
         })
       }
     })
-
-    that.setData({
-      industry_number: wx.getStorageSync('MyIndustry').length,
-      company_number: wx.getStorageSync('MyCompany').length,
-      entre_number: wx.getStorageSync('MyEntre').length
+    var timestamp = Date.parse(new Date());
+    wx.getStorage({
+      key: 'uid_time',
+      success: function(res) {
+        if ((timestamp - res.data) / 60000 > 29) {
+          wx.login({
+            success: function(res) {
+              if (res.code) {
+                //发起网络请求
+                wx.request({
+                  url: 'https://wxapp.proflu.cn/vipSystem/wxapp/wxuser/wxlogin',
+                  data: {
+                    jsCode: res.code
+                  },
+                  success: function(e) {
+                    console.log(e)
+                    that.setData({
+                      uid: e.data.uid
+                    })
+                    wx.setStorage({
+                      key: 'uid',
+                      data: e.data.uid,
+                    })
+                    wx.setStorage({
+                      key: 'uid_time',
+                      data: Date.parse(new Date()),
+                    })
+                  },
+                  fail: function(e) {
+                    console.log(e)
+                  }
+                })
+              } else {
+                console.log('登录失败！' + res.errMsg)
+              }
+            }
+          })
+        }
+      },
     })
-
-    if (a == 0) {
-      barlength: '1%'
-    }
-    else{
-      barlength: '25%'
-    }
-    that.setData({
-      barlength: that.data.barlength
-    })
-    console.log(that.data.barlength)
   }
 })

@@ -1,1 +1,25 @@
-/* pages/exam/exam.wxss */
+.header{
+  width: 600rpx;
+  padding: 15rpx;
+  margin: 50rpx auto 0;
+  text-align: center;
+  color: #17AFF8;
+  font-size: 60rpx;
+}
+.title{
+  margin: 50rpx 20rpx;
+  color: #17AFF8;
+  font-size: 40rpx;
+  font-weight: bolder
+}
+
+.text{
+  width: 700rpx;
+  height: auto;
+  padding: 25rpx 15rpx;
+  margin: 10rpx auto;
+  text-align: center;
+  background-color:#17AFF8;
+  color: white;
+  font-size: 30rpx; 
+}

@@ -6,12 +6,11 @@ Page({
     loadingIconHidden: true,
     noResultHidden: true,
     inputText: '',
-    myCompany: [],
-    SearchResult: '',
     comp_List: true,
-    searResult: false,
     search: true,
-    companyList: ['蚂蚁金服', '阿里云', '滴滴出行', '陆金所', '美团点评集团', '今日头条', '腾讯娱乐', "大疆无人机", "京东金融", "快手", "菜鸟网络"],
+    companyList: [],
+    myCompany_name: [],
+    myCompany_id: []
   },
 
 
@@ -20,103 +19,98 @@ Page({
     wx.getStorage({
       key: 'MyCompany',
       success: function(res) {
-        console.log(res.data[0])
-        for (var i = 0; i < res.data.length; i++) {
-          for (var j = 0; j < that.data.companyList.length; j++) {
-            if (res.data[i] == that.data.companyList[j]) {
-              that.setData({
-                myCompany: res.data
-              })
-            }
-          }
-        }
+        console.log(res.data)
+        that.setData({
+          myCompany_name: res.data.name,
+          myCompany_id: res.data.id
+        })
       },
     })
   },
 
+
   save: function(e) {
     var that = this
+    var id = that.data.myCompany_id
+    var name = that.data.myCompany_name
+    console.log(name)
     wx.setStorage({
       key: 'MyCompany',
-      data: that.data.myCompany
+      data: {
+        id,
+        name
+      }
     })
-    wx.switchTab({
-      url: '../user/user',
+    wx.request({
+      url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/updateCompany',
+      data: {
+        uid: wx.getStorageSync('uid'),
+        id: id.toString()
+      },
+      success: function(e) {
+        console.log(e)
+        wx.switchTab({
+          url: '../user/user',
+          success: function(e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onShow();
+          }
+        })
+      },
+      fail: function() {
+        wx.switchTab({
+          url: '../user/user'
+        })
+        wx.showToast({
+          title: '保存失败',
+          icon: 'none',
+          duration: 1000
+        })
+      }
     })
   },
 
-  bindfocus: function(e) {
-    this.setData({
-
-      comp_List: false
-    })
-  },
   bindKeyInput: function(e) {
-    this.setData({
+    var that = this
+    that.setData({
       inputText: e.detail.value,
-
-
+    })
+    wx.request({
+      url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/queryCompany',
+      data: {
+        company: e.detail.value
+      },
+      success: function(e) {
+        console.log(e)
+        that.setData({
+          companyList: e.data
+        })
+        // if (e.data == null){
+        // that.setData({
+        //   companyList: null
+        // })}
+        // else{
+        //   that.setData({
+        //     companyList: e.data
+        //   })
+        // }
+      },
+      fail: function(e) {
+        wx.showToast({
+          title: '加载失败',
+          icon: 'none',
+          duration: 200
+        })
+      }
     })
   },
 
-  searchCompany: function(e) {
-    var that = this
-    var inputText = e.detail.value
-    if (inputText == '') {
-      return
-    }
-    that.setData({
-      search: false,
-      keyWord: e.detail.value,
-      searchResult: '',
-      noResultHidden: true
-    })
-    that.getSearchResult()
-  },
-
-  clcSearchCompany: function(e) {
-    this.setData({
-      comp_List: true,
-      searResult: false,
-      search: true,
-      inputText: '',
-      noResultHidden: true,
-
-    })
-  },
-
-  getSearchResult: function() {
-    var that = this
-    var index = that.data.companyList.indexOf(that.data.keyWord)
-
-    console.log(that.data.keyWord)
-    if (index >= 0) {
-      that.setData({
-        searResult: true,
-        comp_List: false,
-        searchResult: that.data.keyWord
-      })
-    } else {
-      that.setData({
-        noResultHidden: false
-      })
-    }
-  },
-
-  chooseResult: function(e) {
-    that.setData({
-      searResult: true,
-      comp_List: false,
-      searchResult: that.data.keyWord
-    })
-  },
-
-  onReachBottom: function(e) {},
 
   choose: function(e) {
     var that = this
-    console.log(that.data.myCompany)
-    var index = that.data.myCompany.indexOf(e.currentTarget.dataset.id);
+    console.log(that.data.myCompany_name)
+    var index = that.data.myCompany_name.indexOf(e.currentTarget.dataset.id.company);
     if (index >= 0) {
       wx.showModal({
         title: '提示',
@@ -124,19 +118,20 @@ Page({
       })
     } else {
       that.setData({
-        myCompany: that.data.myCompany.concat(e.currentTarget.dataset.id)
+        myCompany_name: that.data.myCompany_name.concat(e.currentTarget.dataset.id.company),
+        myCompany_id: that.data.myCompany_id.concat(e.currentTarget.dataset.id.id)
       })
     }
   },
 
-
   delete: function(e) {
     console.log(e.currentTarget.dataset.index)
     var that = this
-    that.data.myCompany.splice(e.currentTarget.dataset.index, 1)
+    that.data.myCompany_name.splice(e.currentTarget.dataset.index, 1)
+    that.data.myCompany_id.splice(e.currentTarget.dataset.index, 1)
     that.setData({
-      myCompany: that.data.myCompany
+      myCompany_name: that.data.myCompany_name,
+      myCompany_id: that.data.myCompany_id
     })
-
   }
 })

@@ -1,5 +1,3 @@
-/* pages/find/find.wxss */
-
 .blue {
   width: 10rpx;
   height: 48rpx;

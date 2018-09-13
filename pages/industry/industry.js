@@ -2,11 +2,6 @@
 Page({
   data: {
     IndustryList: [{
-        id: 0,
-        name: '电子商务',
-        check: ''
-      },
-      {
         id: 1,
         name: '医疗健康',
         check: ''
@@ -90,7 +85,11 @@ Page({
         id: 17,
         name: '农业',
         check: ''
-      },
+      }, {
+        id: 18,
+        name: '电子商务',
+        check: ''
+      }
     ]
   },
 
@@ -102,7 +101,7 @@ Page({
         console.log(res)
         for (var j = 0; j < res.data.length; j++) {
           for (var i = 0; i < that.data.IndustryList.length; i++) {
-            if (that.data.IndustryList[i].name == res.data[j].name) {
+            if (that.data.IndustryList[i].id == res.data[j]) {
               that.data.IndustryList[i].check = 1
             }
           }
@@ -139,29 +138,36 @@ Page({
     var CheckedIndustry = new Array()
     var j = 0
     for (var i = 0; i < that.data.IndustryList.length; i++) {
-      var id = that.data.IndustryList[i].id
-      var name = that.data.IndustryList[i].name
       if (that.data.IndustryList[i].check == 1) {
-        CheckedIndustry[j] = {
-          id,
-          name
-        }
+        CheckedIndustry[j] = that.data.IndustryList[i].id
         j++
       }
     }
-
     wx.setStorage({
       key: 'MyIndustry',
       data: CheckedIndustry
     })
-
-    wx.switchTab({
-      url: '../user/user',
-    })
-
     that.setData({
       industry_number: wx.getStorageSync('MyIndustry').length
     })
+    wx.switchTab({
+      url: '../user/user'
+    })
+    wx.showToast({
+      title: '保存成功',
+      icon: 'success',
+      duration: 500
+    })
+
+    wx.request({
+      url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/updateIndustry',
+      data: {
+        uid: wx.getStorageSync('uid'),
+        id: CheckedIndustry.toString()
+      },
+      success: function(e) {
+        console.log(e)
+      }
+    })
   },
 })
-

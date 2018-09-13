@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.6.0",
+	"libVersion": "2.3.0",
 	"appid": "wxe4fac813a0d128d3",
-	"projectname": "%E4%B8%AA%E4%BA%BA%E5%9F%B9%E5%85%BB%E8%AE%A1%E5%88%92",
+	"projectname": "%E8%BF%AD%E4%BB%A32.2%20%E4%B8%8A%E7%BA%BF%E7%89%88",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 20,
+			"current": 22,
 			"list": [
 				{
 					"id": 0,
@@ -55,21 +55,15 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "我的话题",
-					"pathName": "pages/user_talk/user_talk",
+					"pathName": "pages/user_topic/user_topic",
 					"query": ""
 				},
 				{
 					"id": 6,
 					"name": "意见反馈",
 					"pathName": "pages/user_feedback/user_feedback",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "话题",
-					"pathName": "pages/user_talk/user_talk",
 					"query": ""
 				},
 				{
@@ -134,8 +128,14 @@
 				},
 				{
 					"id": -1,
-					"name": "公司",
-					"pathName": "pages/company/company",
+					"name": "考试",
+					"pathName": "pages/exam/exam",
+					"query": ""
+				},
+				{
+					"id": 17,
+					"name": "part1",
+					"pathName": "pages/part1/part1",
 					"query": ""
 				},
 				{
@@ -146,14 +146,26 @@
 				},
 				{
 					"id": -1,
-					"name": "入学考试",
-					"pathName": "pages/exam/exam",
+					"name": "公司",
+					"pathName": "pages/company/company",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "笔试",
-					"pathName": "pages/level1/level1",
+					"name": "我的课程",
+					"pathName": "pages/multi/multi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "part2",
+					"pathName": "pages/part2/part2",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "part3",
+					"pathName": "pages/part3/part3",
 					"query": ""
 				}
 			]

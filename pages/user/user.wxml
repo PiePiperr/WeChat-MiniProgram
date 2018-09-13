@@ -1,7 +1,3 @@
-<view class='{{buttonStatus}} tip0'>*登录后，这里将出现你的作品，你的收藏等，我们将优化你的推荐引擎。</view>
-
-<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary" bindtap='onLoad' class="{{buttonStatus}} login">授权登录</button>
-
 <view class='header'>
   <view class="{{buttonStatus}}">
     <image src='../../icon/noavatar.png' class="avatar"></image>
@@ -9,36 +5,35 @@
   <image src='{{userInfo.avatarUrl}}' class="{{info}} avatar"></image>
   <view class='user'>
     <view class="name">{{userInfo.nickName}}</view>
-    <view hidden='{{section}}' class='{{info}} section'>所属部门 | 职位名称</view>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfoButton' class="{{buttonStatus}} login">登录</button>
     <view class='max'>
       <view class='progressbar' style='width: {{barlength}}'></view>
     </view>
     <text class='text2' style='color: white'>兴趣领域完成度： </text>
     <text class='text2' style='color: white'>{{barlength}}</text>
-
   </view>
 </view>
 
 <view class='userInfo1'>
-  <view class='trainingplan'>
+  <view class='interested'>
     <view class='item' bindtap='edit_industry'>
-      <text class='number'>{{industry_number}}</text>
-      <text class='text1'>理想行业</text>
+      <view class='number'>{{industry_number}}</view>
+      <view class='text1'>理想行业</view>
     </view>
     <view class='item' bindtap='edit_career'>
-      <text class='number'>{{career_number}}</text>
-      <text class='text1'>理想职业</text>
+      <view class='number'>{{career_number}}</view>
+      <view class='text1'>理想职业</view>
     </view>
     <view class='item' bindtap='edit_company'>
-      <text class='number'>{{company_number}}</text>
-      <text class='text1'>目标公司</text>
+      <view class='number'>{{company_number}}</view>
+      <view class='text1'>目标公司</view>
     </view>
     <view class='item' bindtap='edit_entrepreneur'>
-      <text class='number'>{{entre_number}}</text>
-      <text class='text1'>关注企业家</text>
+      <view class='number'>{{entre_number}}</view>
+      <view class='text1'>企业家</view>
     </view>
     <view class='border' style='left: 25%'></view>
-    <view class='border' style='left: 49%; border-right: solid #e7e7e7 4rpx'></view>
+    <view class='border' style='left: 50%; border-right: solid #e7e7e7 4rpx'></view>
   </view>
   <checkbox-group class='{{choose}} checkbox' bindchange="checkboxChange">
     <label class="checkbox2" wx:for="{{items}}" wx:key="{{entre}}">
@@ -59,16 +54,22 @@
     <text>我的话题</text>
     <image src='../../icon/borrow.png' class='borrow'></image>
   </view>
+  <view class='{{info}} my' bindtap='lesson'>
+    <image src='../../icon/lesson.png' class='collect'></image>
+    <text>我的课程</text>
+    <image src='../../icon/borrow.png' class='borrow'></image>
+  </view>
 </view>
+
 <view class='userInfo3'>
+  <view class='{{info}} my' bindtap='exam'>
+    <image src='../../icon/Lu_2.png' class='collect'></image>
+    <text>入学考试</text>
+    <image src='../../icon/borrow.png' class='borrow'></image>
+  </view>
   <view class='{{info}} my' bindtap="feedBack">
     <image src='../../icon/setup.png' class='collect'></image>
     <text>意见反馈</text>
-    <image src='../../icon/borrow.png' class='borrow'></image>
-  </view>
-  <view class='{{info}} my' bindtap='exam'>
-    <image src='../../icon/lu 2.png' class='collect'></image>
-    <text>入学考试</text>
     <image src='../../icon/borrow.png' class='borrow'></image>
   </view>
   <!-- <view class='{{info}} my' bindtap='backtostartpage'>

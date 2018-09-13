@@ -1,4 +1,3 @@
-<!--pages/find/find.wxml-->
 <view style='display:inline-block;width:100%; border-top:30rpx solid #efefef'>
   <view class='blue'></view>
   <view class='hottopic'>热点话题推荐</view>

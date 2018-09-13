@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     var that = this
     that.setData({
-      history: wx.getStorageSync('history')
+      // history: wx.getStorageSync('history')
     })
     if (that.data.history != '') {
       that.setData({
@@ -30,7 +30,7 @@ Page({
   },
 
   search: function (e) {
-    app.aldstat.sendEvent('搜索', '搜索')
+    // app.aldstat.sendEvent('搜索', '搜索')
     console.log(e)
     var that = this
     var inputText = e.detail.value
@@ -122,7 +122,7 @@ Page({
   },
   //点击历史记录搜索
   research: function (e) {
-    app.aldstat.sendEvent('历史搜索', '历史搜索')
+    // app.aldstat.sendEvent('历史搜索', '历史搜索')
     var that = this
     that.setData({
       clear: true,

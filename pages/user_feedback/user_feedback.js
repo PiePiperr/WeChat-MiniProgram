@@ -21,13 +21,10 @@ Page({
   submit: function (e) {
     var that = this
     wx.request({
-      url: 'https://cloud.botbrain.ai/meta/v1/RVCQS9UR56/feedback/log',
-   
+      url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/updateFeedback',
       data: {
-        name:that.data.userInfo.nickName,
-        uid: wx.getStorageSync('openid'),
-        content: that.data.inputtext,
-        type:1
+        uid: wx.getStorageSync('uid'), 
+        feedback: that.data.inputtext
       },
       success: function (e) {
         //console.log(e)
@@ -35,6 +32,13 @@ Page({
           title: '提交成功',
           icon: 'success',
           duration: 2000
+        })
+      },
+      fail: function(){
+        wx.showToast({
+          title: '提交失败',
+          icon: 'none',
+          duration: 1000
         })
       }
     })

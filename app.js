@@ -1,4 +1,4 @@
-var aldstat = require("./utils/ald-stat.js");
+// var aldstat = require("./utils/ald-stat.js");
 //app.js
 App({
   onLaunch: function () {

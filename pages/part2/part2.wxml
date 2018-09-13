@@ -1,0 +1,29 @@
+<view class='title'>考核内容</view>
+<input class='Input' confirm-type="done" bindconfirm="code" placeholder="请输入邀请码"></input>
+<view hidden='{{hide}}' class='content'>
+  <text>{{wx}}</text>
+  <button bindtap='back'>添加后请点击此按钮</button>
+</view>
+<view class='content'>
+  <text>1、登录webex会议室
+
+登录指导视频：
+</text>
+  <view class='video'>
+    <txv-video vid="f054332nghr" playerid="txv1"></txv-video>
+  </view>
+  <text>2、与主持人互动
+
+具体要求：2分钟内完成个人基本信息的介绍、笔试中个人培养方案的介绍
+
+3、网络要求：考核全程说话声音良好、稳定，无嘈杂背景音
+
+</text>
+  <text style='font-weight: bold'>同时满足以上3点即视为通过考核，考试结束后输入负责人发送的邀请码即可获得负责人微信号，添加好友后正式进入实习期</text>
+</view>
+
+
+
+<!-- <view class='title'>考核时间</view>
+<button bindtap='time1'>1.</button>
+<button bindtap='time2'>2.</button> -->

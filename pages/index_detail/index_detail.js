@@ -1,6 +1,7 @@
 var app = getApp();
 const appData = getApp().globalData
 const api = require("../../utils/getTok.js")
+// pages/detail/detail.js
 Page({
   data: {
     iid: '',
@@ -18,6 +19,7 @@ Page({
     liked: true,
     recom: true,
     info: 'hide',
+    userInfo: '',
     imagList: '',
     url: '',
     source: '',
@@ -37,12 +39,15 @@ Page({
     hidden: true,
     currentIndex: 0, //当前自然段索引
     maxIndex: 0
+
   },
 
   onLoad: function(e) {
 
     var that = this
     console.log(e)
+
+
     that.setData({
       iid: e.iid,
       algs: e.algs,
@@ -57,7 +62,7 @@ Page({
       title: '加载中',
       mask: true
     })
-    //请求详情页
+    //请求新闻详情页
     wx.request({
       url: 'https://bkd.botbrain.ai/view/v1/RVCQS9UR56/article/' + that.data.iid + '.json',
       data: {
@@ -80,8 +85,6 @@ Page({
           summary: e.data.article.summary,
         })
         var url = that.data.content[0].url
-
-        console.log(that.data.content)
         contentList[0] = that.data.title
         for (var i = 0; i < that.data.content.length; i++) {
           if (that.data.content[i].type == 'img') {
@@ -142,12 +145,12 @@ Page({
     //console.log(that.data.content)
   },
 
-  collect: function() {
-    app.aldstat.sendEvent('新闻收藏', '新闻收藏')
+  collect: function () {
+    // app.aldstat.sendEvent('新闻收藏', '新闻收藏')
     var that = this
     wx.getStorage({
       key: 'userInfo',
-      success: function(e) {
+      success: function (e) {
         wx.request({
           url: 'https://api.botbrain.ai/behavior/v1/RVCQS9UR56/collect',
           data: {
@@ -158,7 +161,7 @@ Page({
             iid: that.data.iid,
             type: that.data.collectStatus
           },
-          success: function(e) {
+          success: function (e) {
             //console.log(e)
             if (that.data.collectStatus == 0) {
               wx.showToast({
@@ -168,64 +171,46 @@ Page({
               that.setData({
                 collectStatus: 1,
                 collected: false,
+                collectColor: 'red'
               })
-            } else {
+            }
+            else {
               wx.showToast({
                 title: '取消收藏',
                 duration: 1000
               })
               that.setData({
                 collectStatus: 0,
-                collected: true
+                collected: true,
+                collectColor: '#2a2a2a'
               })
             }
           }
         })
       },
-      fail: function() {
-        wx.getUserInfo({
-          success: function(e) {
-            wx.setStorageSync('userInfo', e.userInfo)
-            wx.request({
-              url: 'https://api.botbrain.ai/behavior/v1/RVCQS9UR56/collect',
-              data: {
-                uid: wx.getStorageSync('openid'),
-                guid: wx.getStorageSync('openid'),
-                dt: Date.parse(new Date()) / 1000,
-                plt: 'wechat',
-                iid: that.data.iid,
-                type: that.data.collectStatus
-              },
-              success: function(e) {
-                if (that.data.collectStatus == 0) {
-                  wx.showToast({
-                    title: '收藏成功',
-                    duration: 1000
-                  })
-                  that.setData({
-                    collectStatus: 1,
-                    collected: false,
-                  })
-                } else {
-                  wx.showToast({
-                    title: '取消收藏',
-                    duration: 1000
-                  })
-                  that.setData({
-                    collectStatus: 0,
-                    collected: true
-                  })
-                }
-              }
-            })
+      fail: function () {
+        wx.showModal({
+          title: '提示',
+          content: '登录之后，才可享用此功能！',
+          confirmText: '去登陆',
+          success: function (res) {
+            if (res.confirm) {
+              wx.switchTab({
+                url: '/pages/user/user'
+              })
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
           }
         })
+
       }
 
     })
 
   },
-  
+
+
   onHide: function() {
     wx.stopBackgroundAudio()
   },
@@ -349,7 +334,7 @@ Page({
   },
 
   getUserInfo: function(e) {
-    app.aldstat.sendEvent('收藏登录', '收藏登录')
+    // app.aldstat.sendEvent('收藏登录', '收藏登录')
     var that = this
     wx.setStorage({
       key: 'userInfo',
@@ -361,7 +346,7 @@ Page({
 
 
   getUserInfo: function(e) {
-    app.aldstat.sendEvent('收藏登录', '收藏登录')
+    // app.aldstat.sendEvent('收藏登录', '收藏登录')
     var that = this
     wx.setStorage({
       key: 'userInfo',
@@ -375,7 +360,7 @@ Page({
   },
 
   linkDetail: function(e) {
-    app.aldstat.sendEvent('查看相关推荐详情', '查看相关推荐详情')
+    // app.aldstat.sendEvent('查看相关推荐详情', '查看相关推荐详情')
     wx.navigateTo({
       url: '/pages/index_detail/index_detail?iid=' + e.currentTarget.dataset.iid
     })
@@ -404,10 +389,9 @@ Page({
     })
   },
 
-
   //置顶
   top: function(e) {
-    app.aldstat.sendEvent('阅读置顶', '阅读置顶')
+    // app.aldstat.sendEvent('阅读置顶', '阅读置顶')
     wx.pageScrollTo({
       scrollTop: 0,
       duration: 500
@@ -415,7 +399,7 @@ Page({
   },
   //点赞
   like: function() {
-    app.aldstat.sendEvent('新闻点赞', '新闻点赞')
+    // app.aldstat.sendEvent('新闻点赞', '新闻点赞')
     var that = this
     wx.getStorage({
       key: 'userInfo',
@@ -502,7 +486,7 @@ Page({
     this.audioCtx = wx.createAudioContext('myAudio')
   },
 
-  //播放音频
+  // 播放音频
   audioPlay: function(e) {
     //console.log(e)
     console.log(e.currentTarget.dataset.index)

@@ -1,0 +1,42 @@
+.title {
+  margin: 40rpx;
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+
+.content {
+  width: 650rpx;
+  font-size: 30rpx;
+  border: 1px solid #eee;
+  margin: 20rpx auto;
+  padding: 10rpx;
+  border-radius: 0px;
+  background-color: rgba(200, 200, 200, 0.1);
+  word-wrap: break-word;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.video {
+  background-color: white;
+  margin: 20rpx 0;
+}
+
+.Input {
+  width: 650rpx;
+  height: auto;
+  margin: 30rpx auto;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  border: 1px solid rgba(187, 187, 187, 1);
+  background-color: white;
+  color: rgba(16, 16, 16, 1);
+  font-size: 25rpx;
+  text-align: left;
+}
+
+button {
+  background-color: white;
+  margin: 5rpx auto;
+  font-size: 30rpx;
+}

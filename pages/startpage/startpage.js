@@ -1,113 +1,104 @@
 Page({
   data: {
     item: '',
-
     IndustryList: [{
-        id: 0,
-        name: '电子商务',
-        check: 0
-      },
-      {
         id: 1,
         name: '医疗健康',
-        check: 0
+        check: ''
       },
       {
         id: 2,
         name: '工具软件',
-        check: 0
+        check: ''
       },
       {
         id: 3,
         name: '企业服务',
-        check: 0
+        check: ''
       },
       {
         id: 4,
         name: '汽车交通',
-        check: 0
+        check: ''
       },
       {
         id: 5,
         name: '硬件',
-        check: 0
+        check: ''
       },
       {
         id: 6,
         name: '教育',
-        check: 0
+        check: ''
       },
       {
         id: 7,
         name: '文化娱乐',
-        check: 0
+        check: ''
       },
       {
         id: 8,
         name: '金融',
-        check: 0
+        check: ''
       },
       {
         id: 9,
         name: '体育运动',
-        check: 0
+        check: ''
       },
       {
         id: 10,
         name: '物流',
-        check: 0
+        check: ''
       },
       {
         id: 11,
         name: '本地生活',
-        check: 0
+        check: ''
       },
       {
         id: 12,
         name: '旅游',
-        check: 0
+        check: ''
       },
       {
         id: 13,
         name: '房产服务',
-        check: 0
+        check: ''
       },
       {
         id: 14,
         name: '广告营销',
-        check: 0
+        check: ''
       },
       {
         id: 15,
         name: '游戏',
-        check: 0
+        check: ''
       },
       {
         id: 16,
         name: '社交网络',
-        check: 0
+        check: ''
       },
       {
         id: 17,
         name: '农业',
-        check: 0
-      },
+        check: ''
+      }, {
+        id: 18,
+        name: '电子商务',
+        check: ''
+      }
     ]
   },
 
   onLoad: function() {
-    wx.getStorage({
-      key: 'MyIndustry',
-      success: function(res) {
-        if(res.data.length>0){
-          wx.switchTab({
-            url: '../index/index',
-          })
-        }
-      },
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+    if (wx.getStorageSync('MyIndustry').length > 0) {
+      wx.switchTab({
+        url: '../index/index',
+      })
+    }
   },
 
   check: function(e) {
@@ -142,13 +133,8 @@ Page({
     var CheckedIndustry = new Array()
     var j = 0
     for (var i = 0; i < that.data.IndustryList.length; i++) {
-      var id = that.data.IndustryList[i].id
-      var name = that.data.IndustryList[i].name
       if (that.data.IndustryList[i].check == 1) {
-          CheckedIndustry[j] = {
-            id,
-            name
-          }
+        CheckedIndustry[j] = that.data.IndustryList[i].id
         j++
       }
     }
@@ -156,9 +142,9 @@ Page({
       key: 'MyIndustry',
       data: CheckedIndustry
     })
-
     wx.switchTab({
-      url: '../index/index',
+      url: '../index/index'
     })
   },
 })
+

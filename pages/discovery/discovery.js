@@ -1,17 +1,13 @@
-// pages/find/find.js
-var app = getApp();
+// var app = getApp();
 Page({
-
   data: {
-
-   list: '',
-    topic_id :'',
+    list: '',
+    topic_id: '',
     loading: true,
-    mid:''
-
+    mid: ''
   },
-  
-  onLoad: function (options) {
+
+  onLoad: function(options) {
     var that = this
     wx.showLoading({
       title: '加载中',
@@ -23,13 +19,13 @@ Page({
         uid: wx.getStorageSync('openid'),
         page_size: 10
       },
-      success: function (e) {
+      success: function(e) {
         wx.hideLoading()
       }
     })
   },
 
-  onShow: function (options) {
+  onShow: function(options) {
     var that = this
     wx.showLoading({
       title: '加载中',
@@ -41,7 +37,7 @@ Page({
         uid: wx.getStorageSync('openid'),
         page_size: 10
       },
-      success: function (e) {
+      success: function(e) {
         //console.log(e)
         that.setData({
           list: e.data.data,
@@ -53,15 +49,15 @@ Page({
   },
 
   //查看新闻详情
-  linkDetail0: function (e) {
-   // console.log(e)
+  linkDetail0: function(e) {
+    // console.log(e)
     wx.navigateTo({
       url: '/pages/index_detail/index_detail?iid=' + e.currentTarget.dataset.iid
     })
   },
 
   //下拉触底shuax
-  onReachBottom: function (e) {
+  onReachBottom: function(e) {
     //console.log(e)
     var that = this
     that.setData({
@@ -73,8 +69,8 @@ Page({
         uid: wx.getStorageSync('openid'),
         page_size: 10
       },
-      success: function (e) {
-    setTimeout(function () {
+      success: function(e) {
+        setTimeout(function() {
           that.setData({
             list: that.data.list.concat(e.data.data),
             loading: true
@@ -85,8 +81,8 @@ Page({
   },
 
   //关注按钮动作
-  subTopic: function (e) {
-    app.aldstat.sendEvent('关注话题', '关注话题')
+  subTopic: function(e) {
+    // app.aldstat.sendEvent('关注话题', '关注话题')
     //console.log(e)
     this.setData({
       topic_id: e.currentTarget.dataset.iid
@@ -110,14 +106,14 @@ Page({
         topic_id: that.data.topic_id,
         type: collected
       },
-      success: function (e) {
+      success: function(e) {
         //console.log('请求关注成功')
       }
     })
   },
 
-//跳转至新闻详情
-  linkDetail: function (e) {
+  //跳转至新闻详情
+  linkDetail: function(e) {
     //console.log(e)
     wx.navigateTo({
       url: '/pages/topicdetail/topicdetail?iid=' + e.currentTarget.dataset.iid

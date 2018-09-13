@@ -1,0 +1,19 @@
+
+.content{
+  width: auto;
+  font-size: 30rpx;
+  border: 1px solid #eee;
+  flex: 0 0 auto;
+  margin: 5px;
+  padding: 4px 5px 4px 5px;
+  border-radius: 0px;
+  background-color: rgba(200, 200, 200, 0.1);
+  word-wrap: break-word;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+text{
+  display: block;
+  margin: 30rpx auto
+}

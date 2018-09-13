@@ -1,8 +1,12 @@
+ 
 <view hidden='{{recom}}'>
-  <image src='../../icon/listen.png' hidden='{{listen}}' class='listen' bindtap="listen" data-index='{{currentIndex}}'></image>
-  <image class='listen' hidden='{{stop}}' src='../../icon/stop.png' hidden='{{stop}}' bindtap="audioPlay" data-index='{{currentIndex}}' style='width:120rpx;height:120rpx;line-height :80rpx'></image>
-  <image class='listen' src='../../icon/ing.png' hidden='{{ing}}' bindtap="audioPause" style='width:120rpx;height:120rpx;line-height:80rpx'></image>
+ <image src='../../icon/listen.png' hidden='{{listen}}' class='listen' bindtap="listen"  data-index='{{currentIndex}}'></image> 
+
+<image class='listen' hidden='{{stop}}' src='../../icon/stop.png' hidden='{{stop}}' bindtap="audioPlay" data-index='{{currentIndex}}'style='width:120rpx;height:120rpx;line-height :80rpx'></image>
+<image class='listen' src='../../icon/ing.png' hidden='{{ing}}' bindtap="audioPause" style='width:120rpx;height:120rpx;line-height:80rpx'></image>
 </view>
+
+
 
 <view class="content">
   <view class="source" hidden='{{recom}}'>
@@ -17,11 +21,21 @@
     <block wx:if="{{c.type=='img'}}">
       <image bindtap="zoomOut" data-urls="{{c.url}}" src="{{c.url}}" mode="widthFix"></image>
     </block>
+
     <block wx:if="{{c.type=='paragraphs'}}">
       <view class="detail">{{c.content}}</view>
+     
+
+
     </block>
+
   </block>
 </view>
+
+
+
+
+
 
 <view hidden='{{recom}}' class='recom0'>
   <view class='icon'>
@@ -60,12 +74,12 @@
     <image class="coimg" hidden='{{!liked}}' src="/icon/like_0.png"></image>
     <view style='font-size:25rpx;color:#2a2a2a;display:inline-block;vertical-align:middle;height:60rpx;'>点赞</view>
   </view>
-  <view class='share' bindtap='share'>
-
-    <image class="coimg" src="/icon/share.png"></image>
-    <button style='font-size:25rpx;color:#2a2a2a;display:inline-block;vertical-align:middle;height:45rpx;' open-type="share">分享</button>
-
-
+  <view class='share' bindtap='share' >
+    
+      <image class="coimg" src="/icon/share.png"></image>
+      <button style='font-size:25rpx;color:#2a2a2a;display:inline-block;vertical-align:middle;height:45rpx;' open-type="share">分享</button> 
+      
+    
   </view>
   <view class='top' bindtap="top">
     <image class="coimg" src="/icon/top.png"></image>

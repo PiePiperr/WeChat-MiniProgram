@@ -32,7 +32,7 @@ Page({
   topicDetail: function (e) {
     console.log(e)
     wx.navigateTo({
-      url: '/pages/topicdetail/topicdetail?iid=' + e.currentTarget.dataset.iid
+      url: '/pages/topic_detail/topic_detail?iid=' + e.currentTarget.dataset.iid
     })
   },
 

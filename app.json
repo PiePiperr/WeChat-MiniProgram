@@ -11,14 +11,13 @@
     "pages/user_collect/user_collect",
     "pages/user_topic/user_topic",
     "pages/user_feedback/user_feedback",
-    "pages/find/find",
-    "pages/phone/phone",
-    "pages/perfect/perfect",
+    "pages/discovery/discovery",
     "pages/topicdetail/topicdetail",
     "pages/exam/exam",
-    "pages/level1/level1",
-    "pages/level2/level2",
-    "pages/level3/level3"
+    "pages/part1/part1",
+    "pages/part2/part2",
+    "pages/part3/part3",
+    "pages/user_lesson/user_lesson"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -35,7 +34,7 @@
         "selectedIconPath": "/icon/news2.png"
       },
       {
-        "pagePath": "pages/find/find",
+        "pagePath": "pages/discovery/discovery",
         "text": "发现",
         "iconPath": "/icon/find1.png",
         "selectedIconPath": "/icon/find2.png"
@@ -51,14 +50,7 @@
     "selectedColor": "#17aff8",
     "borderStyle": "white"
   },
-  "networkTimeout": {
-    "request": 30000,
-    "connectSocket": 30000,
-    "uploadFile": 30000,
-    "downloadFile": 30000
-  },
   "debug": true,
-
   "plugins": {
     "tencentvideo": {
       "version": "1.1.8",

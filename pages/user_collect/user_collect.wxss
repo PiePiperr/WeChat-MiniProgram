@@ -1,11 +1,11 @@
 .title {
-  font-size: 12pt;
+  font-size: 34rpx;
   width: 440rpx;
   float: left;
 }
 
 .title1 {
-  font-size: 12pt;
+  font-size:34rpx;
 }
 
 .noimage {

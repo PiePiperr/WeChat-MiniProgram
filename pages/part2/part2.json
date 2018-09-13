@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "txv-video": "plugin://tencentvideo/video"
+  },
+  "navigationBarTitleText": "综合能力考核",
+  "navigationBarBackgroundColor": "#17AFF8",
+  "navigationBarTextStyle": "white"
+}

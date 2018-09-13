@@ -12,7 +12,6 @@
 <view class="list">
   <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
     <view class="item">
-
       <block wx:if="{{list.images[0]==null}}">
         <view class="noimage" bindtap="linkDetail" data-iid="{{list.iid}}" data-algs="{{list.algs[0]}}" data-alg_group="{{alg_group}}">
           <view class="title1">{{list.title}}</view>
@@ -21,22 +20,19 @@
           <image src='../../icon/delete.png' class='delete' hover-class='del' bindtap='delete' data-iid="{{list.iid}}" data-index="{{index}}"></image>
         </view>
       </block>
-
       <block wx:if="{{list.images[0]!=null}}">
         <view class="haveimage" bindtap="linkDetail" data-iid="{{list.iid}}" data-algs="{{list.algs[0]}}" data-alg_group="{{alg_group}}">
           <view class="title">{{list.title}}</view>
-
           <image class="cover" mode="aspectFill" src="{{list.images[0]}}"></image>
         </view>
-
         <view class='source'>{{list.source_name}}
           <image src='../../icon/delete.png' class='delete' bindtap='delete' data-index="{{index}}"></image>
         </view>
       </block>
     </view>
   </block>
-
 </view>
+
 
 <view hidden="{{loading}}" class="load">
   <view class="loadtext">

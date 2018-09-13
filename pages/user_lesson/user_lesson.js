@@ -22,10 +22,12 @@ Page({
 		// this.createVideo('p0127cmrg1m');
 	// },
 	// createVideo(vid) {
-		let player1 = txvContext.getTxvContext('txv1');
-		let player2 = txvContext.getTxvContext('txv2');
-		let player3 = txvContext.getTxvContext('txv3');
-		let player4 = txvContext.getTxvContext('txv4');
+    const txvContext = requirePlugin("tencentvideo");
+    var player1 = txvContext.getTxvContext('txv1');
+    var player2 = txvContext.getTxvContext('txv2');
+    var player3 = txvContext.getTxvContext('txv3');
+    var player4 = txvContext.getTxvContext('txv4');
+    var player5 = txvContext.getTxvContext('txv5');
 		console.log(player1);
 		console.log(player2);
 		console.log(player3);

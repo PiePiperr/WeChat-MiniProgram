@@ -1,4 +1,3 @@
-// pages/user_talk/user_talk.js
 var app = getApp();
 Page({
 

@@ -1,9 +1,9 @@
 .save {
-  width: 120rpx;
+  width: 140rpx;
   height: 60rpx;
   line-height: 60rpx;
   float: right;
-  margin: 25rpx;
+  margin: auto 25rpx;
   font-size: 26rpx;
   border: 1rpx solid #17aff8;
   color: #17aff8;
@@ -12,14 +12,6 @@
 
 .page {
   padding: 0 20rpx;
-}
-
-.tip {
-  border-bottom: 2rpx solid #cfcfcf;
-  font-size: 28rpx;
-  padding: 25rpx 0rpx 4rpx 0rpx;
-  margin: 10rpx 18rpx;
-  width: 95%;
 }
 
 .text {
@@ -34,45 +26,43 @@
 }
 
 .ch_company {
-  border-bottom: 0.5px solid #cfcfcf;
-  font-size: 34rpx;
-  padding-bottom: 20rpx;
-  margin: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eee;
 }
 
 .my_company {
   width: auto;
-  height: 54rpx;
-  line-height: 54rpx;
-  border-radius: 6rpx;
-  font-size: 28rpx;
-  text-align: center;
-  display: inline-block;
-  margin: 0px 25rpx;
-  overflow: hidden;
-  color: #f5a623;
-  background-color: #fef7e8;
+  font-size: 13px;
+  border: 1px solid #eee;
+  flex: 0 0 auto;
+  margin: 5px;
+  padding: 4px 5px 4px 5px;
+  border-radius: 0px;
+  background-color: rgba(200, 200, 200, 0.1);
 }
 
 .delete {
+  margin: auto 10rpx;
   width: 23rpx;
   height: 23rpx;
 }
 
 .searchArea {
-  margin-top: 20rpx;
+  width: auto;
+  margin: 20rpx auto;
   display: flex;
-  justify-content: center;
+  align-content: center;
 }
 
 .searchInput {
   background-color: white;
-  padding: 0 5rpx 20rpx;
-  width: 290px;
-  height: 50rpx;
+  margin-left: 30rpx;
+  width: 650rpx;
+  height: auto;
   border-radius: 20rpx;
   color: rgba(16, 16, 16, 1);
-  font-size: 14px;
   text-align: left;
   border: 1px solid rgba(187, 187, 187, 1);
 }
@@ -85,47 +75,14 @@
 }
 
 .searchInput input {
-  font-size: 14pt;
-  padding-left: 10rpx;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
-  height: 56rpx;
-  line-height: 56rpx;
-}
-
-.loading image {
-  height: 40rpx;
-  width: 40rpx;
-  display: block;
-  margin: 10rpx auto;
-}
-
-.loadingText {
-  margin-top: 20rpx;
-  text-align: center;
   font-size: 30rpx;
-  font-weight: bold;
-}
-
-.clearSearch {
-  color: #576b95;
-  font-size: 32rpx;
-  line-height: 85rpx;
-  margin-left: 25rpx;
-}
-
-.noResult {
-  color: rgba(16, 16, 16, 1);
-  font-size: 32rpx;
-  text-align: center;
-}
-
-.companyList {
-  margin: 20rpx 40rpx;
+  padding: 10rpx
 }
 
 .company {
-  height: 70rpx;
-  font-size: 32rpx;
-  color: #666;
+  padding: 10px 5px 10px 15px;
+  margin-left: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  font-size: 13px;
 }

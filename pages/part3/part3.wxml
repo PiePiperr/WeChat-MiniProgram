@@ -1,0 +1,26 @@
+<button bindtap='lesson1' style='margin-top: 100rpx'>
+  <text>{{lesson}}</text>
+</button>
+
+<image src='../../icon/delete.png' class='arrow'></image>
+
+<view class='content'>
+  <text>{{link}}</text>
+</view>
+
+<image src='../../icon/delete.png' class='arrow'></image>
+
+<view class='container'>
+  <view class='inputarea'>
+    <view class='title'>师父姓名：</view>
+    <input class='Input' confirm-type="done" bindconfirm="code" ></input>
+  </view>
+  <view class='inputarea'>
+    <view class='title'>意向部门：</view>
+    <input class='Input' confirm-type="done" bindconfirm="code" ></input>
+  </view>
+  <view class='inputarea'>
+    <view class='title'>邀请码：</view>
+    <input class='Input' confirm-type="done" bindconfirm="code" ></input>
+  </view>
+</view>

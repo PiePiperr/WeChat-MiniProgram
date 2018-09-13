@@ -8,11 +8,11 @@ const getToken = () => {
         client_id: appData.baidu_ApiKey,
         client_secret: appData.baidu_SecretKey
       },
-      success: function (res) {
+      success: function(res) {
         resolve(res)
         appData.baidu_Token = res.data.access_token
       },
-      fail: function (err) {
+      fail: function(err) {
         reject(err)
       }
     })
