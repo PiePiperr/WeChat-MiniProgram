@@ -1,0 +1,114 @@
+button {
+  background-color: white;
+  font-size: 30rpx;
+}
+
+.save_btn {
+  display: flex;
+  position: fixed;
+  right: 5rpx;
+  bottom: 150rpx;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 140rpx;
+  height: 140rpx;
+  padding: 20rpx 0 10rpx;
+  background-color: white;
+  border: #17aff8 1px solid;
+  border-radius: 50%;
+}
+
+.save_btn image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.save_btn text {
+  display: block;
+  width: inherit;
+  font-size: 20rpx;
+  color: #17aff8;
+  text-align: center;
+}
+
+.tip {
+  margin: 20rpx auto;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.form {
+  margin: 30rpx 40rpx;
+  font-size: 40rpx;
+}
+
+.item {
+  margin: 40rpx auto;
+}
+
+.text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 40rpx;
+  padding-bottom: 40rpx;
+  font-size: 35rpx;
+}
+
+.select {
+  display: inline-block;
+  border: 1rpx solid #ccc;
+  height: 50rpx;
+  width: 500rpx;
+  font-size: 32rpx;
+  padding: 15rpx 0rpx 2.5rpx 10rpx;
+  line-height: 37rpx;
+}
+
+radio-group {
+  display: flex;
+  width: inherit;
+  flex-wrap: wrap;
+}
+
+.radio {
+  display: block;
+  width: 33%;
+  margin: 15rpx 0;
+  font-size: 35rpx;
+}
+
+.input {
+  border: 1rpx solid #ccc;
+  width: 450rpx;
+  height: 60rpx;
+  display: inline-block;
+}
+
+input {
+  font-size: 30rpx;
+  height: 60rpx;  
+  line-height: 60rpx;
+  padding: 0 15rpx;
+  background-color: white
+}
+
+.textarea {
+  padding: 5rpx;
+  margin-top: 35rpx;
+  border: 1rpx solid #ccc;
+  width: 580rpx;
+  height: 200rpx;
+  font-size: 30rpx;
+  background-color: white  
+}
+
+textarea{
+  width: inherit;
+  height: inherit;
+}
+
+#title{
+  font-size: 35rpx;
+  font-weight: bold
+}

@@ -1,0 +1,84 @@
+<view class='header'>陆向谦创新创业实验室入学考核</view>
+<view class='inform'>
+<view class='title'>当前阶段</view>
+<view id='container'>
+  <view class='item'>
+    <view class='item1' style='margin-right: -20rpx'>
+      <image class="img" src="/images/arrow_1.png"></image>
+    </view>
+    <view class='item1'>
+      <image class="img" src="/images/arrow_0.png" hidden='{{!arrow1}}'></image>
+      <image class="img" src="/images/arrow_1.png" hidden='{{arrow1}}'></image>
+    </view>
+    <view class='item1' style='margin-left: -20rpx'>
+      <image class="img" src="/images/arrow_0.png" hidden='{{!arrow2}}'></image>
+      <image class="img" src="/images/arrow_1.png" hidden='{{arrow2}}'></image>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item2' style='margin-right: -20rpx; padding-left: 20rpx'>个人培养方案</view>
+    <view wx:if='{{arrow1 == true}}' style='color: black' class='item2'>综合能力考核</view>
+    <view wx:if='{{arrow1 == false}}' class='item2'>综合能力考核</view>
+    <view wx:if='{{arrow2 == true}}' style='color: black; margin-left: -10rpx' class='item2'>实习阶段考核</view>
+    <view wx:if='{{arrow2 == false}}' style='margin-left: -10rpx' class='item2'>实习阶段考核</view>
+  </view>
+</view>
+</view>
+
+<view class='inform' hidden='{{level0}}'>
+  <view class='title'>考核内容</view>
+  <view class='text'>完成本阶段考试，你需要：</view>
+  <view class='text'>
+    <text>1.进入</text>
+    <button bindtap='lesson'>我的课程</button>
+    <text>观看前5节基础课视频</text>
+  </view>
+  <view class='text'>
+    <text>2.填写并提交个人培养方案</text>
+    <button bindtap='personalplan'>开始填写</button>
+  </view>
+  <view class='text'>
+  <text selectable='true'>3.你也可以在网页端完成考试，网址：https://wxapp.proflu.cn/welcome/test1.jsp
+提交后，在下方填写考试时提交的邮箱，如果属实系统会自动跳转到下一阶段</text>
+    <input name="email" bindinput="Input_email" value='{{email}}'></input>
+    <button bindtap='check_email'>提交</button>
+  </view>
+</view>
+
+<view class='inform' hidden='{{level1}}'>
+  <view class='title'>考核内容</view>
+  <view class='text'>完成本阶段考试，你需要：</view>
+  <view class='text'>
+    <text>1.使用zoom会议系统参加考试</text>
+    <button bindtap='webex'>进入</button>
+  </view>
+  <view class='text'>
+    <text>2.修改个人培养方案（选做）</text>
+    <button bindtap='personalplan'>修改</button>
+  </view>
+</view>
+
+<view class='inform' hidden='{{level2}}'>
+  <view class='title'>考核内容</view>
+  <view class='text'>完成本阶段考试，你需要：</view>
+  <view class='text'>
+    <text>1.进入实习生群</text>
+    <button bindtap='QR_webex'>获取二维码</button>
+  </view>
+  <view class='text'>
+    <text>2.进入</text>
+    <button bindtap='lesson'>我的课程</button>
+    <text>观看所有基础课视频</text>
+  </view>
+  <view class='text'>
+    3.选择至少一个感兴趣的项目，完成项目任务，并让负责人认识你
+  </view>
+  <view class='text'>
+    4.填写并提交分析报告
+    <button bindtap='report'>开始填写</button>
+  </view>
+  <view class='text'>
+    <text selectable='true'>你也可以在网页端完成考试，网址：
+    https://wxapp.proflu.cn/welcome/IndustryReport.html</text>
+  </view>
+</view>

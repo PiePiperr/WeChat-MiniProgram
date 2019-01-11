@@ -1,16 +1,16 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
+	"libVersion": "2.4.0",
 	"appid": "wxe4fac813a0d128d3",
-	"projectname": "%E8%BF%AD%E4%BB%A32.2%20%E4%B8%8A%E7%BA%BF%E7%89%88",
+	"projectname": "%E8%BF%AD%E4%BB%A32.4.6%20%E5%BC%80%E5%8F%91%E7%89%88",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,145 +28,97 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
-					"name": "新闻详情",
-					"pathName": "pages/index_detail/index_detail",
-					"query": "iid=AODgzNDIyMDU0MDA"
+					"name": "个人中心",
+					"pathName": "pages/user/index/user_index",
+					"query": ""
 				},
 				{
 					"id": 1,
-					"name": "个人中心",
-					"pathName": "pages/user/user",
+					"name": "布本新闻列表",
+					"pathName": "pages/buben_news/list/buben_news_list",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "搜索",
-					"pathName": "pages/search/search",
-					"query": ""
+					"id": 2,
+					"name": "布本新闻详情",
+					"pathName": "pages/buben_news/detail/buben_news_detail",
+					"query": "iid=AOTY4OTkxMTM5MzY"
 				},
 				{
-					"id": -1,
-					"name": "绑定手机",
-					"pathName": "pages/phone/phone",
+					"id": 2,
+					"name": "考试",
+					"pathName": "pages/user/exam/index/exam_index",
 					"query": ""
 				},
 				{
 					"id": 4,
-					"name": "我的话题",
-					"pathName": "pages/user_topic/user_topic",
+					"name": "zoom",
+					"pathName": "pages/user/exam/webex/webex",
 					"query": ""
 				},
 				{
-					"id": 6,
-					"name": "意见反馈",
-					"pathName": "pages/user_feedback/user_feedback",
+					"id": 4,
+					"name": "个人培养方案",
+					"pathName": "pages/user/exam/personalplan/personalplan",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "我的作品",
-					"pathName": "pages/user_work/user_work",
+					"id": 8,
+					"name": "千里马",
+					"pathName": "pages/chollima/list/chollima_list",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "完善信息",
-					"pathName": "pages/perfect/perfect",
-					"query": ""
+					"id": 7,
+					"name": "千里马详情",
+					"pathName": "pages/chollima/detail/chollima_detail",
+					"query": "com_id=2"
 				},
 				{
-					"id": 9,
-					"name": "发现",
-					"pathName": "pages/find/find",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "话题2",
-					"pathName": "pages/topicdetail/topicdetail",
+					"id": 8,
+					"name": "查询公司",
+					"pathName": "pages/chollima/search/chollima_search",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "我的收藏",
-					"pathName": "pages/user_collect/user_collect",
+					"name": "起始页",
+					"pathName": "pages/startpage/startpage",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "发现1",
-					"pathName": "pages/topicdetail/topicdetail",
+					"name": "创新课考核",
+					"pathName": "pages/user/exam/course/course",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "123",
-					"pathName": "pages/phone/phone",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "听力",
-					"pathName": "pages/listen/listen",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "首页",
-					"pathName": "pages/index/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的行业",
-					"pathName": "pages/industry/industry",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "考试",
-					"pathName": "pages/exam/exam",
-					"query": ""
-				},
-				{
-					"id": 17,
-					"name": "part1",
-					"pathName": "pages/part1/part1",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "企业家",
-					"pathName": "pages/entrepreneur/entrepreneur",
+					"name": "奖学金考核",
+					"pathName": "pages/user/exam/scholarship/scholarship",
 					"query": ""
 				},
 				{
 					"id": -1,
 					"name": "公司",
-					"pathName": "pages/company/company",
+					"pathName": "pages/user/company/user_company",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "我的课程",
-					"pathName": "pages/multi/multi",
+					"name": "搜索资讯",
+					"pathName": "pages/buben_news/search/buben_news_search",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "part2",
-					"pathName": "pages/part2/part2",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "part3",
-					"pathName": "pages/part3/part3",
-					"query": ""
+					"name": "行业报告",
+					"pathName": "pages/user/exam/report/report",
+					"query": "iid=AOTY4OTQ1MzcwODg"
 				}
 			]
 		}

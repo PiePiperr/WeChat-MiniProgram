@@ -1,0 +1,119 @@
+<view class='tip'>*请填写一份为自己量身定做的培养方案*</view>
+
+<button class='save_btn' bindtap='save'>
+  <image src='/images/save.png'></image>
+  <text>保存草稿</text>
+</button>
+
+<view class='form'>
+  <form bindsubmit="formSubmit">
+    <view class='item'>
+      <view class='text'>1.姓名:</view>
+      <view class='input'>
+        <input name="name" bindinput="Input_name" value='{{Input_form.name}}'></input>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>2.学校:</view>
+      <view class='input'>
+        <input name="university" bindinput="Input_university" value='{{Input_form.university}}'></input>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>3.邮箱:</view>
+      <view class='input'>
+        <input name="email" bindinput="Input_email" value='{{Input_form.email}}'></input>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>4.年级:</view>
+      <radio-group bindchange="myGrade">
+        <label class="radio1" wx:for="{{Gradelist}}">
+          <radio value="{{item.name}}"/>{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class='item' style='width: 660rpx'>
+      <view class='text'>5.我感兴趣的行业有哪些？</view>
+      <view class='sele_Industry' bindtap='sele_Industry'>
+        <button wx:if='{{item.check==1}}' bindtap="myIndustry" class="btn1" wx:for="{{IndustryList}}" wx:key="index" data-Index="{{index}}" data-data='{{item}}' style="background-color:#17AFF8; color:white">{{item.name}}</button>
+      </view>
+      <view class="seleIndustry_box" wx:if="{{sele_Industry}}">
+        <view class='industrylist'>
+          <button wx:if='{{item.check!==1}}' bindtap="myIndustry" class="btn0" wx:for="{{IndustryList}}" wx:key="index" data-Index="{{index}}" data-data='{{item}}' style="background-color:white; color:#17AFF8">{{item.name}}</button>
+        </view>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text' style='display: block'>6.我感兴趣的职业方向是什么</view>
+      <radio-group class="radio-group" bindchange="myCareer">
+        <label class="radio1" wx:for="{{CareerList}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class='item'>
+      <view class='text'>7.陆教授的教育理念是</view>
+      <view class='input_btm'>
+        <input name='theory' placeholder='提示：…不如…' bindinput="Input_theory" value="{{Input_form.theory}}"></input>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>8.毕业后我要加入什么类型的公司</view>
+      <radio-group class="radio-group" bindchange="ideal_Company_Type">
+        <label class="radio2" wx:for="{{Company}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class='item'>
+      <view class='text' style='width: '>9.我想加入的公司有</view>
+      <view class='input_btm'>
+        <input name='ideal_Company' bindinput="Input_ideal_Company" value='{{Input_form.ideal_Company}}'></input>
+      </view>
+      <view class='text' style='margin: 20rpx 0 -20rpx'>我的原因或我的创业想法什么</view>
+        <view class='textarea'>
+          <textarea name='Thought' bindinput="Input_Thought" value='{{Input_form.Thought}}' maxlength='-1'></textarea>
+        </view>
+      </view>
+
+      <view class='item'>
+        <view class='text'>10.为了实现上述目标，我需要做哪些准备才能加入这样的公司或者创业（需要具备哪些知识技能）？</view>
+        <view class='textarea' style='margin-top:80rpx'>
+          <textarea name='preparation' bindinput="Input_preparation" value='{{Input_form.preparation}}' maxlength='-1'></textarea>
+        </view>
+      </view>
+
+      <view class='item'>
+        <view class='text'>11.我希望在陆教授的实验室获得什么机会，想在实验室参与什么样的项目？ </view>
+        <view class='textarea'>
+          <textarea name='opportunity' bindinput="Input_opportunity" value='{{Input_form.opportunity}}' maxlength='-1'></textarea>
+        </view>
+      </view>
+
+      <view class='item'>
+        <view class='text'>12. 为了更好地参与进来，我已有的哪些兴趣或特长可以帮助到我？ </view>
+        <view class='textarea'>
+          <textarea name='experience' bindinput="Input_experience" value='{{Input_form.experience}}' maxlength='-1'></textarea>
+        </view>
+      </view>
+
+      <view class='item'>
+        <view class='text'>13. 我在不同人生阶段想要实现的目标（如30岁、35岁、40岁） </view>
+        <view class='textarea'>
+          <textarea name='life_Plan' bindinput="Input_life_Plan" value='{{Input_form.life_Plan}}' maxlength='-1'></textarea>
+        </view>
+      </view>
+
+      <button form-type='submit'>提交（可重复提交）</button>
+  </form>
+
+  </view>

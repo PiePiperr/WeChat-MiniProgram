@@ -1,0 +1,2 @@
+<image src='{{ImgUrl}}' mode='scaleToFill' bindtap="previewImage"></image>
+<view class='tip'>点击图片后长按保存</view>

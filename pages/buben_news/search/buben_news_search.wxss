@@ -1,0 +1,143 @@
+.content {
+  background-color: white;
+  margin-bottom: 10rpx;
+}
+
+.flex {
+  display: flex;
+  font-size: 30rpx;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+
+.com_name {
+  width: auto;
+  font-size: 13px;
+  flex: 0 0 auto;
+  margin: 5px;
+  padding: 10rpx 20rpx;
+  border-radius: 5px;
+  background-color: #e9e9e9;
+}
+
+.title {
+  position: relative;
+  padding: 20rpx;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.searchArea {
+  width: auto;
+  background-color: #17aff8;
+  display: flex;
+  padding: 15rpx 0;
+  align-content: center;
+}
+
+.searchInput {
+  background-color: white;
+  margin-left: 30rpx;
+  width: 700rpx;
+  height: auto;
+  border-radius: 20rpx;
+  color: rgba(16, 16, 16, 1);
+  text-align: left;
+  border: 1px solid #e7e7e7;
+}
+
+.searchInput image {
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+  margin: 10rpx;
+}
+
+.searchInput input {
+  font-size: 30rpx;
+  padding: 10rpx;
+}
+
+.search1 {
+  color: #2b579a;
+  font-size: 35rpx;
+  line-height: 85rpx;
+  margin-left: 20rpx;
+}
+
+.news {
+  overflow: hidden;
+}
+
+.news_title {
+  width: 440rpx;
+  height: 120rpx;
+  float: left;
+  overflow: auto;
+}
+
+.news .cover {
+  width: 215rpx;
+  height: 150rpx;
+  float: right;
+}
+
+.item {
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 30rpx;
+  padding: 20rpx 30rpx;
+}
+
+.load image {
+  height: 80rpx;
+  width: 80rpx;
+  display: block;
+  margin: 10rpx auto;
+}
+
+.loadtext {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.top {
+  position: fixed;
+  height: 100rpx;
+  width: 100rpx;
+  z-index: 1;
+  bottom: 50rpx;
+  right: 10rpx;
+}
+
+.detail {
+  font-size: 12pt;
+  margin-bottom: 10rpx;
+  padding: center;
+  border-bottom: 1rpx solid #efefef;
+  height: 70rpx;
+}
+
+.source {
+  height: 37rpx;
+  font-size: 26rpx;
+  color: #aaa;
+  float: left;
+  margin-top: 10px;
+}
+
+.clear {
+  font-size: 11pt;
+  text-align: center;
+  height: 60rpx;
+  color: #2b579a;
+}
+
+.info {
+  font-size: 12pt;
+  padding: 50rpx 0;
+  text-align: center;
+  color: #888;
+}

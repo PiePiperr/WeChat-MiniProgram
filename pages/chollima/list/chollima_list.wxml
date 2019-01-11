@@ -1,0 +1,44 @@
+<view class='header'>
+ <view class="searchArea">
+  <view class="searchInput">
+    <image src="/images/search1.png" mode='aspectFill'></image>
+    <input bindtap='search' placeholder="搜索公司"></input>
+  </view>
+</view>
+  <view class="nav_bar">
+    <scroll-view scroll-x="true" class='nav'>
+      <text class="{{column_id==0?'selected':''}}" bindtap="loadColumn" data-id="0" data-name="all">全部</text>
+      <block wx:for="{{MyIndustry}}" wx:key="index" wx:for-item="MyIndustry">
+        <text class="{{column_id==MyIndustry.id?'selected':''}}" bindtap="loadColumn" data-id="{{MyIndustry.id}}" data-name="{{MyIndustry.name}}">{{MyIndustry.name}}</text>
+      </block>
+    </scroll-view>
+    <image class='icon' src='/images/plus.png' bindtap='add'></image>
+  </view>
+  <view class="cat_bar">
+    <view class='flex_item1' bindtap='info'>
+      <text>公司</text>
+      <image class='info' src='/images/question_mark.png'></image>
+    </view>
+    <view class='flex_item2'>最新融资时间</view>
+    <view class='flex_item3'>最新估值</view>
+  </view>
+</view>
+
+<view wx:if='{{list==""}}' class='none'>
+  <image src='/images/nonetwork.png'></image>
+  <text>加载失败</text>
+  <view class='reload' bindtap='onLoad'>点击重试</view>
+</view>
+
+<view class="list">
+  <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+    <view class="item" bindtap='linkDetail' data-com_id="{{list.com_id}}">
+      <view class='flex_item1'>
+        <text class="invse_title">{{list.com_name}}</text>
+        <text class='cat'>{{list.sub_cat_name}}</text>
+      </view>
+      <view class='flex_item2'>{{list.invse_year}}-{{list.invse_month}}-{{list.invse_day}}</view>
+      <view class='flex_item3'>{{list.invse_guess_particulars}}</view>
+    </view>
+  </block>
+</view>

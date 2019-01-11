@@ -1,23 +1,30 @@
 {
   "pages": [
+    "pages/chollima/list/chollima_list",
+    "pages/chollima/detail/chollima_detail",
+    "pages/chollima/search/chollima_search",
     "pages/startpage/startpage",
-    "pages/index/index",
-    "pages/index_detail/index_detail",
-    "pages/industry/industry",
-    "pages/company/company",
-    "pages/entrepreneur/entrepreneur",
-    "pages/search/search",
-    "pages/user/user",
-    "pages/user_collect/user_collect",
-    "pages/user_topic/user_topic",
-    "pages/user_feedback/user_feedback",
-    "pages/discovery/discovery",
-    "pages/topicdetail/topicdetail",
-    "pages/exam/exam",
-    "pages/part1/part1",
-    "pages/part2/part2",
-    "pages/part3/part3",
-    "pages/user_lesson/user_lesson"
+    "pages/buben_news/list/buben_news_list",
+    "pages/buben_news/detail/buben_news_detail",
+    "pages/buben_news/search/buben_news_search",
+    "pages/itjuzi_news/list/itjuzi_news_list",
+    "pages/itjuzi_news/detail/itjuzi_news_detail",
+    "pages/user/index/user_index",
+    "pages/user/industry/user_industry",
+    "pages/user/company/user_company",
+    "pages/user/entrepreneur/user_entrepreneur",
+    "pages/user/collect/user_collect",
+    "pages/user/feedback/user_feedback",
+    "pages/user/exam/index/exam_index",
+    "pages/user/exam/course/course",
+    "pages/user/exam/scholarship/scholarship",
+    "pages/user/exam/webex/webex",
+    "pages/user/exam/QR_webex/QR_webex",
+    "pages/user/exam/personalplan/personalplan",
+    "pages/user/exam/report/report",
+    "pages/user/lesson/user_lesson",
+    "pages/user/topic/list/user_topic_list",
+    "pages/user/topic/detail/user_topic_detail"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -28,22 +35,22 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "/icon/news1.png",
-        "selectedIconPath": "/icon/news2.png"
+        "pagePath": "pages/chollima/list/chollima_list",
+        "text": "千里马",
+        "iconPath": "/images/chollima1.png",
+        "selectedIconPath": "/images/chollima2.png"
       },
       {
-        "pagePath": "pages/discovery/discovery",
-        "text": "发现",
-        "iconPath": "/icon/find1.png",
-        "selectedIconPath": "/icon/find2.png"
+        "pagePath": "pages/buben_news/list/buben_news_list",
+        "text": "资讯",
+        "iconPath": "/images/news1.png",
+        "selectedIconPath": "/images/news2.png"
       },
       {
-        "pagePath": "pages/user/user",
-        "text": "个人中心",
-        "iconPath": "/icon/user1.png",
-        "selectedIconPath": "/icon/user2.png"
+        "pagePath": "pages/user/index/user_index",
+        "text": "我的",
+        "iconPath": "/images/user1.png",
+        "selectedIconPath": "/images/user2.png"
       }
     ],
     "color": "#bfbfbf",
@@ -53,7 +60,7 @@
   "debug": true,
   "plugins": {
     "tencentvideo": {
-      "version": "1.1.8",
+      "version": "1.2.4",
       "provider": "wxa75efa648b60994b"
     }
   }

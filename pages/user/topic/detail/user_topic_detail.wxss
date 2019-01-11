@@ -1,0 +1,92 @@
+/* pages/user_talk/user_talk.wxss */
+
+.background {
+  background-color: #17aff8;
+  width: 750rpx;
+  height: 499rpx;
+  border-bottom: 30rpx solid #efefef;
+}
+
+.cover {
+  background-color: #95a3ae;
+  width: 180rpx;
+  height: 180rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.topic {
+  margin-top: 25rpx;
+  font-size: 40rpx;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.introduce {
+  color: white;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+.follow {
+  width: 280rpx;
+  height: 70rpx;
+  border: 1rpx solid white;
+  border-radius: 40rpx;
+  text-align: center;
+  color: white;
+  line-height: 70rpx;
+  margin: 20rpx auto;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.title {
+  font-size: 30rpx;
+  width: 440rpx;
+  float: left;
+  overflow: hidden;
+  height: 100rpx;
+}
+
+.title1 {
+  font-size: 30rpx;
+}
+
+.noimage {
+  overflow: hidden;
+}
+
+.haveimage {
+  overflow: hidden;
+}
+
+.haveimage .cover {
+  width: 230rpx;
+  height: 150rpx;
+  float: right;
+}
+
+.item {
+  border-bottom: 1rpx solid #f0f0f0;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.source {
+  height: 37rpx;
+  font-size: 26rpx;
+  color: #aaa;
+  float: left;
+  margin-top: 10px;
+}

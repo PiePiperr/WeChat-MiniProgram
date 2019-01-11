@@ -1,0 +1,28 @@
+<view class='header'>
+  <text>《陆向谦创新创业课》
+课程考核</text>
+</view>
+
+<view class='inform'>
+<view class='title'>考试内容</view>
+  <view>期中考试</view>
+  <view class='text'>
+    <text>填写并提交个人培养方案</text>
+    <button bindtap='personalplan'>开始填写</button>
+  </view>
+  <view class='text'>
+    <text selectable='true'>你也可以在网页端完成考试，网址：
+    https://wxapp.proflu.cn/welcome/test1.jsp</text>
+  </view>
+  <view>期末考试</view>
+  <view class='text'>填写并提交分析报告
+    <button bindtap='report'>开始填写</button>
+  </view>
+  <view class='text'>
+    <text selectable='true'>你也可以在网页端完成考试，网址：
+    https://wxapp.proflu.cn/welcome/IndustryReport.html</text>
+  </view>
+
+
+  <view>tips：如果你想和创新创业实验室的同学们一起玩案例，可以通过考取奖学金的形式加入，返回上一页面选择第二项查看奖学金考核内容</view>
+</view>

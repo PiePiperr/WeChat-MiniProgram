@@ -94,26 +94,26 @@ Page({
   },
 
   onLoad: function() {
-    if (wx.getStorageSync('MyIndustry').length > 0) {
-      wx.switchTab({
-        url: '../index/index',
-      })
-    }
+    // if (wx.getStorageSync('MyIndustry').length > 0) {
+    //   wx.switchTab({
+    //     url: '../chollima/list/chollima_list',
+    //   })
+    // }
   },
 
   check: function(e) {
     console.log(e)
-    var that = this
-    var a = 'IndustryList[' + e.currentTarget.dataset.index + '].check'
-    var b = e.currentTarget.dataset.data.check == 0 ? 1 : 0;
+    let that = this
+    let a = 'IndustryList[' + e.currentTarget.dataset.index + '].check'
+    let b = e.currentTarget.dataset.data.check == 0 ? 1 : 0;
     that.setData({
       [a]: b
     })
   },
 
   checkall: function(e) {
-    var that = this
-    for (var i = 0; i < that.data.IndustryList.length; i++) {
+    let that = this
+    for (let i = 0; i < that.data.IndustryList.length; i++) {
       that.data.IndustryList[i].check = 1
     }
     that.setData({
@@ -121,21 +121,21 @@ Page({
     })
   },
 
-
   skip: function(e) {
     wx.switchTab({
-      url: '../index/index',
+      url: '../chollima/list/chollima_list',
     })
   },
 
   save: function(e) {
-    var that = this
-    var CheckedIndustry = new Array()
-    var j = 0
-    for (var i = 0; i < that.data.IndustryList.length; i++) {
+    let that = this
+    let CheckedIndustry = new Array()
+    for (let i = 0; i < that.data.IndustryList.length; i++) {
       if (that.data.IndustryList[i].check == 1) {
-        CheckedIndustry[j] = that.data.IndustryList[i].id
-        j++
+        CheckedIndustry.push({
+          id: that.data.IndustryList[i].id,
+          name: that.data.IndustryList[i].name
+        })
       }
     }
     wx.setStorage({
@@ -143,8 +143,7 @@ Page({
       data: CheckedIndustry
     })
     wx.switchTab({
-      url: '../index/index'
+      url: '../chollima/list/chollima_list'
     })
   },
 })
-

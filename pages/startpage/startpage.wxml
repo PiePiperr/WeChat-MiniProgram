@@ -1,7 +1,7 @@
 <view style='width: 100% ; height: 220rpx; padding-top: 30rpx'>
-  <image src='../../icon/LU.png' style='width: 220rpx; height: 220rpx' mode='aspectFit'></image>
-  <text style='display:block;position: absolute; top: 60rpx; left: 240rpx; right: 35rpx; font-size: 35rpx' >请在下列标签中选择您感兴趣的行业</text>
-  <button bindtap="checkall" class="btn0" >所有行业</button>
+  <image src='/images/LU.png' style='width: 220rpx; height: 220rpx' mode='aspectFit'></image>
+  <text style='display:block;position: absolute; top: 60rpx; left: 240rpx; right: 35rpx; font-size: 35rpx' >选择你感兴趣的行业</text>
+  <button bindtap="checkall" class="btn0">全选</button>
 </view>
 
 <view class='IndustryList'>

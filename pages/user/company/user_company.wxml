@@ -1,0 +1,22 @@
+<view class='Company'>
+  <view class='header'>
+    <view style='width: 70%'>公司</view>
+    <view style='width: 30%'>操作</view>
+  </view>
+  <view wx:if='{{MyCompany.id==""}}' class='none'>
+    <image class='noresult' src='/images/noresult.png'></image>
+    <text>这里空空如也</text>
+    <view class='search' bindtap='search'>去关注</view>
+  </view>
+  <view class='content'>
+    <view style='width: 70%'>
+      <view class='flexitem1' wx:for="{{MyCompany.name}}" wx:key="index">{{item}}</view>
+    </view>
+    <view style='width: 30%'>
+      <view class='flexitem1' wx:for="{{MyCompany.id}}" wx:key="index">
+        <text style='color: #17AFF8' data-com_id="{{item}}" bindtap='linkDetail'>查看</text>
+        <text style='color: #FB6161' bindtap='unfollow'>取消关注</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view class='content'>
+  <txv-video vid="q0546zlaqh5" playerid="txv1"></txv-video>
+  <text>课程一：《学理论不如学案例，学案例不如做案例》</text>
+</view>
+<view class='content'>
+  <txv-video vid="g05579xhzdd" playerid="txv2"></txv-video>
+  <text>课程二：《水滴公司创始人兼CEO沈鹏分享》</text>
+</view>
+<view class='content'>
+  <txv-video vid="d0559dav09b" playerid="txv3"></txv-video>
+  <text>课程三：《功勋学员分享学习体验》</text>
+</view>
+<view class='content'>
+  <txv-video vid="x05581l9a35" playerid="txv4"></txv-video>
+  <text>课程四：《兜行创始人兼CEO任静分享》</text>
+</view>
+<view class='content'>
+  <txv-video vid="f0558cccf42" playerid="txv5"></txv-video>
+  <text>课程五：《天时地利人和》</text>
+</view>
+<view class='content'>
+  <txv-video vid="u0560v9yvjv" playerid="txv6"></txv-video>
+  <text>课程六：《云知声创始人/董事长/CTO梁家恩分享，华院数据首席科学家尹相志分享》</text>
+</view>
+<view class='content'>
+  <txv-video vid="o05598tup64" playerid="txv7"></txv-video>
+  <text>课程七：《颠覆创新与非颠覆创新》</text>
+</view>
+<view class='content'>
+  <txv-video vid="q05577v8skx" playerid="txv8"></txv-video>
+  <text>课程八：《布本智能创始人兼CEO卢学裕分享》</text>
+</view>
+<view class='content'>
+  <txv-video vid="o0559n9jnnn" playerid="txv9"></txv-video>
+  <text>课程九：《非常规自我实现》</text>
+</view>
+<view class='content'>
+  <txv-video vid="x0558m7u43b" playerid="txv10"></txv-video>
+  <text>课程十：《小鹅通创始人兼CEO鲍春健分享》</text>
+</view>
+<view class='content'>
+  <txv-video vid="z0557oxt76g" playerid="txv11"></txv-video>
+  <text>课程十一：《从头创业不如加盟正在崛起的公司》</text>
+</view>

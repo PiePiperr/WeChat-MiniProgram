@@ -1,0 +1,65 @@
+<view hidden='{{recom}}'>
+  <image src='/images/listen.png' hidden='{{listen}}' class='listen' bindtap="listen" data-index='{{currentIndex}}'></image>
+  <image class='listen' hidden='{{stop}}' src='/images/stop.png' hidden='{{stop}}' bindtap="audioPlay" data-index='{{currentIndex}}' style='width:120rpx;height:120rpx;line-height :80rpx'></image>
+  <image class='listen' src='/images/ing.png' hidden='{{ing}}' bindtap="audioPause" style='width:120rpx;height:120rpx;line-height:80rpx'></image>
+</view>
+
+<view class="content">
+  <view class="source" hidden='{{recom}}'>
+    <text>{{source}}</text>
+    <text class='publish'>{{publish}}</text>
+  </view>
+  <view class="title">
+    <text>{{title}}</text>
+  </view>
+  <block wx:for="{{content}}" wx:key="index" wx:for-item="c">
+    <block wx:if="{{c.type=='img'}}">
+      <image bindtap="zoomOut" data-urls="{{c.url}}" src="{{c.url}}" mode="widthFix"></image>
+    </block>
+    <block wx:if="{{c.type=='paragraphs'}}">
+      <view class="detail">{{c.content}}</view>
+    </block>
+  </block>
+</view>
+
+<view hidden='{{recom}}' class='recom0'>
+  <view class='icon'>
+    <view class="recom">相关推荐</view>
+  </view>
+  <view class="related">
+    <block wx:for="{{relatedlist}}" wx:key="related" wx:for-item="related">
+      <view class="list" bindtap="linkDetail" data-iid="{{related.iid}}">
+        <block wx:if="{{related.images[0]==null}}">
+          <view class="relatedtitle1">{{related.title}}</view>
+          <view class='re_source'>{{related.source_name}}</view>
+        </block>
+        <block wx:if="{{related.images[0]!=null}}">
+          <view class="relatedtitle">{{related.title}}</view>
+          <image src="{{related.images}}" mode="aspectFill" class="cover"></image>
+          <view class='re_source'>{{related.source_name}}</view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view hidden='{{recom}}' class='bottom'>
+  <view class='collect' bindtap="collect">
+    <image class="coimg" hidden='{{collected}}' src="/images/collect_1.png"></image>
+    <image class="coimg" hidden='{{!collected}}' src="/images/collect_0.png"></image>
+    <view style='font-size:25rpx;color:#2a2a2a;display:inline-block;vertical-align:middle;height:60rpx;'>收藏</view>
+  </view>
+  <view class='like' bindtap="like">
+    <image class="coimg" hidden='{{liked}}' src="/images/like_1.png"></image>
+    <image class="coimg" hidden='{{!liked}}' src="/images/like_0.png"></image>
+    <view style='font-size:25rpx;color:#2a2a2a;display:inline-block;vertical-align:middle;height:60rpx;'>点赞</view>
+  </view>
+  <view class='share' bindtap='share'>
+    <image class="coimg" src="/images/share.png"></image>
+    <button style='font-size:25rpx;color:#2a2a2a;display:inline-block;vertical-align:middle;height:45rpx;' open-type="share">分享</button>
+  </view>
+  <view class='top' bindtap="top">
+    <image class="coimg" src="/images/top.png"></image>
+    <view style='font-size:25rpx;color:#2a2a2a;display:inline-block;vertical-align:middle;height:50rpx;'>置顶</view>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+<view class="searchArea">
+  <view class="searchInput">
+    <image src="/images/search1.png" mode='aspectFill'></image>
+    <input placeholder="搜索资讯" confirm-type="search" bindconfirm="search" value='{{inputText}}' bindinput="bindKeyInput"></input>
+  </view>
+</view>
+
+<view class='content'>
+  <view class='title'>热门搜索</view>
+  <view class='flex'>
+    <view class='com_name' wx:for="{{hot_com}}" wx:key="index" data-value='{{item}}' bindtap='research'>{{item}}</view>
+  </view>
+</view>
+
+<view style='background-color: white'>
+  <view wx:if='{{list!==""}}' class='title'>资讯详情</view>
+  <view hidden="{{none}}" class='info'>搜索不到相关资讯</view>
+  <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+    <view class="item" bindtap="linkDetail" data-iid="{{list.iid}}">
+      <block wx:if="{{list.images[0]==null}}">
+        <view style='padding: 20rpx 0' class="news">
+          <view>{{list.title}}</view>
+          <view class='source'>{{list.source_name}}</view>
+        </view>
+      </block>
+      <block wx:if="{{list.images[0]!=null}}">
+        <view class="news">
+          <view class="news_title">{{list.title}}</view>
+          <image class="cover" mode="aspectFill" src="{{list.images[0]}}"></image>
+          <view class='source'>{{list.source_name}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
+
+<view hidden="{{loading}}" class="load">
+  <view class="loadtext">
+    <text>正在加载\n</text>
+  </view>
+  <image src="/images/loading.gif" mode='aspectFill'></image>
+</view>
+
+<view hidden="{{his}}" class="content">
+  <view class="title">搜索历史：</view>
+  <view wx:if="{{history}}" class='flex'>
+    <view wx:for="{{history}}" wx:key="index" wx:for-item="his" class="com_name" bindtap='research' data-value='{{his}}'>{{his}}</view>
+  </view>
+  <view hidden='{{hisnone}}' class='info'>暂无搜索历史</view>
+  <view hidden='{{clear}}' class="clear" bindtap='clearHistory'>清空搜索历史</view>
+</view>

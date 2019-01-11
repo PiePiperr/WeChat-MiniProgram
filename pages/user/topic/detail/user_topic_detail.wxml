@@ -1,0 +1,43 @@
+<!--pages/user_talk/user_talk.wxml-->
+
+
+  <view class='background'>
+    <image src='{{icon}}' class='cover'></image>
+    <view class='topic'>#{{obj.topic_name}}#</view>
+    <view class='introduce'>{{obj.desc}}</view>
+   <view class="follow" bindtap="subTopic" data-follow="{{obj.collected}}" data-idx="{{idx}}" data-iid="{{obj.id}}"> {{obj.collected==1?'+关注':'已关注'}}</view>
+   </view>
+
+
+
+<!-- 获取列表 -->
+<view class="list">
+  <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+    <view class="item" bindtap="linkDetail" data-iid="{{list.iid}}">
+
+      <block wx:if="{{list.images[0]==null}}">
+        <view class="noimage">
+          <view class="title1">{{list.title}}</view>
+          <view class='source'>{{list.source_name}}</view>
+        </view>
+      </block>
+
+      <block wx:if="{{list.images[0]!=null}}">
+        <view class="haveimage">
+          <view class="title">{{list.title}}</view>
+          <image class="cover" mode="aspectFill" src="{{list.images[0]}}"></image>
+          <view class='source'>{{list.source_name}}</view>
+        </view>
+    </block>
+</view>
+  </block>
+
+</view>
+
+
+
+
+
+
+
+

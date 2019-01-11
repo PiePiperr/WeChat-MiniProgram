@@ -1,0 +1,125 @@
+<view class='tip'>*行业研究报告*</view>
+
+<button class='save_btn' bindtap='save'>
+  <image src='/images/save.png'></image>
+  <text>保存草稿</text>
+</button>
+
+<view class='form'>
+  <form bindsubmit="formSubmit">
+    <view class='item'>
+      <view class='text'>你最想加入的行业是:</view>
+      <radio-group bindchange="industry">
+        <label class="radio" wx:for="{{IndustryList}}">
+          <radio value="{{item.name}}"/>{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class='item'>
+      <view class='text'>子行业是:</view>
+      <view class='input'>
+        <input bindinput="subIndustry" value="{{Input_form.subIndustry}}"></input>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>你想加入这个行业的理由是</view>
+      <view class='textarea'>
+        <textarea bindinput="reasonForIndustry" value="{{Input_form.reasonForIndustry}}" maxlength='-1' ></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>你是通过哪些途径获取行业相关信息的？（至少写3个途径，精确到具体的网站或自媒体）：</view>
+      <view class='textarea'>
+        <textarea bindinput="ways" value="{{Input_form.ways}}" placeholder='例：途径1：网站——IT桔子，XX，XX；途径2：微信公众号——人人都是产品经理，XX，XX；途径3：知乎专栏——创新工场，XX，XX' maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>在该领域中，市场份额排名前列的公司有哪几家</view>
+      <view class='textarea'>
+        <textarea bindinput="excellentCompany" value="{{Input_form.excellentCompany}}" maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>在该领域中，最具发展潜力的千里马公司（估值超过10亿人民币）有哪些？</view>
+      <view class='textarea'>
+        <textarea bindinput="chollima" value="{{Input_form.chollima}}" maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>你看好这些公司的理由是什么？</view>
+      <view class='textarea'>
+        <textarea bindinput="reasonForCompany" value="{{Input_form.reasonForCompany}}" maxlength='-1'></textarea>
+      </view>
+    </view>
+    <view id='title'>请选择一家你认为最值得加入的公司，并完成下面的分析报告</view>
+    <view class='item'>
+      <view class='text'>公司名</view>
+      <view class='input'>
+        <input bindinput="company" value="{{Input_form.company}}"></input>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>公司基本信息</view>
+      <view class='textarea'>
+        <textarea bindinput="companyBaseInfo" value="{{Input_form.companyBaseInfo}}" placeholder='主营业务，公司人数'maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>创始人信息</view>
+      <view class='textarea'>
+        <textarea bindinput="founderInfo" value="{{Input_form.founderInfo}}" placeholder='是谁，年龄，连续创业经历／工作经历'  maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>市场规模分析</view>
+      <view class='textarea'>
+        <textarea bindinput="marketSize" value="{{Input_form.marketSize}}" placeholder='行业总规模和公司所占市场份额，重点突出如何切入市场的' maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>融资信息</view>
+      <view class='textarea'>
+        <textarea bindinput="financingInfo" value="{{Input_form.financingInfo}}"  placeholder='最近融资额，投资机构，最新估值'maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>竞品</view>
+      <view class='textarea'>
+        <textarea bindinput="competitor" value="{{Input_form.competitor}}" placeholder='列举几个竞品和相关信息'  maxlength='-1'></textarea>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>为什么现在值得加入</view>
+      <view class='textarea'>
+        <textarea bindinput="whyJoin" value="{{Input_form.whyJoin}}" placeholder='请自由发挥，写出你认为本公司值得加入的理由即可，可选角度：行业爆发、公司运营情况良好，业务快速增长、公司人均估值高、团队文化、CEO品质等' maxlength='-1'></textarea>
+      </view>
+    </view>
+    
+    <view class='item'>
+      <view class='text'>姓名:</view>
+      <view class='input' style='margin-left: 30rpx'>
+        <input bindinput="username" value="{{Input_form.username}}"></input>
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='text'>邮箱:</view>
+      <view class='input' style='margin-left: 30rpx'>
+        <input bindinput="email" value="{{Input_form.email}}"></input>
+      </view>
+    </view>
+    <button form-type='submit'>提交（可重复提交）</button>
+  </form>
+</view>

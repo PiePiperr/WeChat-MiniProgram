@@ -1,0 +1,16 @@
+image{
+  width: 540rpx;
+  height: 720rpx;
+  display: block;
+  margin: 0 auto
+}
+
+button{
+  width: 90%;
+  margin: 10rpx auto
+}
+
+.tip{
+  margin: 0 auto;
+  text-align: center
+}

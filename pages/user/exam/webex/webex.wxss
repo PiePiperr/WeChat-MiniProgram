@@ -1,0 +1,70 @@
+.text {
+  width: 680rpx;
+  margin: 10rpx 10rpx 30rpx;
+  font-size: 30rpx;
+}
+
+.title {
+  color: #17AFF8;
+  margin: 40rpx 10rpx;
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+
+.content {
+  width: 700rpx;
+  margin: 20rpx auto;
+}
+
+image {
+  width: 450rpx;
+  height: 600rpx;
+  display: block;
+  margin: 20rpx auto;
+}
+
+.info {
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  margin: 0;
+}
+
+.zoom{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 10rpx;
+  vertical-align: bottom;    
+}
+
+.Input {
+  width: auto;
+  height: auto;
+  margin: 10rpx auto;
+  padding-top: 10rpx;
+  display: flex;
+  align-content: center;
+}
+
+.Input input {
+  width: 500rpx;
+  margin: 0 40rpx;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  border: 1px solid rgba(187, 187, 187, 1);
+  background-color: white;
+  color: rgba(16, 16, 16, 1);
+  font-size: 25rpx;
+  text-align: left;
+}
+
+.Input button {
+  height: auto;
+  line-height: auto;
+  background-color: white;
+  font-size: 25rpx;
+  padding: 5rpx 20rpx;
+  color: rgb(65, 65, 65);  
+  border: 1px solid rgba(187, 187, 187, 1);
+}

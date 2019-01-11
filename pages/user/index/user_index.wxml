@@ -1,0 +1,80 @@
+<view class='header'>
+  <view class="{{buttonStatus}}">
+    <image src='/images/noavatar.png' class="avatar"></image>
+  </view>
+  <image src='{{userInfo.avatarUrl}}' class="{{info}} avatar"></image>
+  <view class='user'>
+    <view class="name">{{userInfo.nickName}}</view>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfoButton' class="{{buttonStatus}} login">登录</button>
+    <view class='max'>
+      <view class='progressbar' style='width: {{barlength}}'></view>
+    </view>
+    <text class='text2' style='color: white'>兴趣领域完成度： </text>
+    <text class='text2' style='color: white'>{{barlength}}</text>
+  </view>
+</view>
+
+<view class='userInfo1'>
+  <view class='interested'>
+    <view class='item' bindtap='edit_industry'>
+      <view class='number'>{{industry_number}}</view>
+      <view class='text1'>关注行业</view>
+    </view>
+    <view class='item' bindtap='edit_company'>
+      <view class='number'>{{company_number}}</view>
+      <view class='text1'>关注公司</view>
+    </view>
+    <view class='item' bindtap='edit_entrepreneur'>
+      <view class='number'>{{entre_number}}</view>
+      <view class='text1'>关注企业家</view>
+    </view>
+    <view class='item' bindtap='edit_career'>
+      <view class='number'>{{career_number}}</view>
+      <view class='text1'>职业定位</view>
+    </view>
+    <view class='border' style='left: 25%'></view>
+    <view class='border' style='left: 50%; border-right: solid #e7e7e7 4rpx'></view>
+  </view>
+  <checkbox-group class='{{choose}} checkbox' bindchange="checkboxChange">
+    <label class="checkbox2" wx:for="{{items}}" wx:key="{{entre}}">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+    <button class='save' bindtap='save_career'>保存</button>
+  </checkbox-group>
+</view>
+
+<view class='userInfo2'>
+  <view class="{{info}} my" bindtap="linkCollect">
+    <image src='/images/collect.png' class='collect'></image>
+    <text>我的收藏</text>
+    <image src='/images/borrow.png' class='borrow'></image>
+  </view>
+  <!-- <view class="{{info}} my" bindtap="linkTopic">
+    <image src='/images/topic.png' class='collect'></image>
+    <text>我的话题</text>
+    <image src='/images/borrow.png' class='borrow'></image>
+  </view> -->
+  <view class='{{info}} my' bindtap='lesson'>
+    <image src='/images/lesson.png' class='collect'></image>
+    <text>我的课程</text>
+    <image src='/images/borrow.png' class='borrow'></image>
+  </view>
+</view>
+
+<view class='userInfo3'>
+  <view class='{{info}} my' bindtap='exam'>
+    <image src='/images/Lu_2.png' class='collect'></image>
+    <text>考核</text>
+    <image src='/images/borrow.png' class='borrow'></image>
+  </view>
+  <view class='{{info}} my' bindtap="feedBack">
+    <image src='/images/setup.png' class='collect'></image>
+    <text>意见反馈</text>
+    <image src='/images/borrow.png' class='borrow'></image>
+  </view>
+  <!-- <view class='{{info}} my' bindtap='backtostartpage'>
+    <image src='//images/lu 2.png' class='collect'></image>
+    <text>关于陆向谦创新创业实验室</text>
+    <image src='//images/borrow.png' class='borrow'></image>
+  </view> -->
+</view>

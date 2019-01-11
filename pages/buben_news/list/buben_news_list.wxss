@@ -1,0 +1,141 @@
+page{
+  background-color: white
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 20rpx solid #e9e9e9;
+}
+
+.searchArea {
+  width: auto;
+  background-color: #17aff8;
+  display: flex;
+  padding: 15rpx 0;
+  align-content: center;
+}
+
+.searchInput {
+  background-color: white;
+  margin-left: 30rpx;
+  width: 700rpx;
+  height: auto;
+  border-radius: 20rpx;
+  color: rgba(16, 16, 16, 1);
+  text-align: left;
+  border: 1px solid #e7e7e7;
+}
+
+.searchInput image {
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+  margin: 10rpx;
+}
+
+.searchInput input {
+  font-size: 30rpx;
+  padding: 10rpx;
+}
+
+.nav {
+  width: 720rpx;
+  white-space: nowrap;
+  padding: 0 15rpx
+}
+
+.nav text {
+  display: table-cell;
+  vertical-align: bottom;
+  font-size: 13pt;
+  padding: 25rpx 15rpx 5rpx;
+}
+
+.selected {
+  font-weight: bold;
+  border-bottom: 5px solid #17aff8;
+}
+
+.list {
+  margin-top: 210rpx;
+  background-color: white
+}
+
+.delete {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 10rpx;
+}
+
+.news_title {
+  width: 440rpx;
+  height: 120rpx;
+  float: left;
+  overflow: auto;
+}
+
+.news_image {
+  overflow: hidden;
+}
+
+.news_image .cover {
+  width: 215rpx;
+  height: 150rpx;
+  float: right;
+}
+
+.item {
+  border-bottom: 1rpx solid #f0f0f0;
+  padding: 20rpx 30rpx 50rpx 30rpx;
+  font-size: 30rpx
+}
+
+.load image {
+  height: 40rpx;
+  width: 40rpx;
+  display: block;
+  margin: 10rpx auto;
+}
+
+.loadtext {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.source {
+  height: 40rpx;
+  font-size: 26rpx;
+  color: #aaa;
+  float: left;
+  width: 100%;
+}
+
+.none {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  color: #8a8a8a
+}
+
+.none image {
+  width: 300rpx;
+  height: 200rpx;
+}
+
+.reload{
+  margin-top: 40rpx;
+  padding: 30rpx 50rpx;
+  font-size: 40rpx;
+  color: rgb(243, 243, 243);
+  background-color: #8a8a8a;
+  border-radius: 10px;
+}

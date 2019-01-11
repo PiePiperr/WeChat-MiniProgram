@@ -1,0 +1,50 @@
+<view class="header">
+  <view class="searchArea">
+    <view class="searchInput">
+      <image src="/images/search1.png" mode='aspectFill'></image>
+      <input bindtap='search' placeholder="搜索资讯"></input>
+    </view>
+  </view>
+  <scroll-view scroll-x="true" class='nav'>
+    <block wx:for="{{nav}}" wx:key="index" wx:for-item="nav">
+      <text class="{{cid==nav.id?'selected':''}}" bindtap="loadColumn" data-id="{{nav.id}}">{{nav.name}}</text>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="list">
+  <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+    <view class="item">
+      <block wx:if="{{list.images[0]==null}}">
+        <view style='padding: 20rpx 0' class="news_image" bindtap="linkDetail" data-iid="{{list.iid}}" data-algs="{{list.algs[0]}}" data-alg_group="{{alg_group}}">
+          <view>{{list.title}}</view>
+        </view>
+        <view class='source'>{{list.source_name}}
+          <image src='/images/dislike.png' class='delete' hover-class='del' bindtap='delete' data-iid="{{list.iid}}" data-index="{{index}}" data-tag='{{list.source_name}}'></image>
+        </view>
+      </block>
+      <block wx:if="{{list.images[0]!=null}}">
+        <view class="news_image" bindtap="linkDetail" data-iid="{{list.iid}}" data-algs="{{list.algs[0]}}" data-alg_group="{{alg_group}}">
+          <view class="news_title">{{list.title}}</view>
+          <image class="cover" mode="aspectFill" src="{{list.images[0]}}"></image>
+        </view>
+        <view class='source'>{{list.source_name}}
+          <image src='/images/dislike.png' class='delete' bindtap='delete' data-index="{{index}}" data-tag='{{list.source_name}}'></image>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
+
+<view wx:if='{{list==""}}' class='none'>
+  <image src='/images/nonetwork.png'></image>
+  <text>加载失败</text>
+  <view class='reload' bindtap='onPullDownRefresh'>点击重试</view>
+</view>
+
+<view hidden="{{loading}}" class="load">
+  <view class="loadtext">
+    <text>正在加载\n</text>
+  </view>
+  <image src="/images/loading.gif" mode='aspectFill'></image>
+</view>

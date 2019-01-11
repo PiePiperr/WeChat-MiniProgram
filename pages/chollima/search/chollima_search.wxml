@@ -1,0 +1,38 @@
+<view class="searchArea">
+  <view class="searchInput">
+    <image src="/images/search1.png" mode='aspectFill'></image>
+    <input confirm-type="search" bindconfirm="searchCompany" bindinput="bindKeyInput" placeholder="搜索公司"></input>
+  </view>
+</view>
+
+<view class='content'>
+  <view class='title'>热门搜索</view>
+  <view class='company'>
+    <view class='com_name' wx:for="{{hot_com}}" wx:key="index" data-com='{{item}}' bindtap='hot_search'>{{item}}</view>
+  </view>
+</view>
+
+<view class='content'>
+  <view class='title'>已关注
+    <button class='save' bindtap='save'>保存</button>
+  </view>
+  <view class='company'>
+    <view wx:if='{{myCompany_name==""}}' class='none'>无</view>
+    <view class='com_name' wx:for="{{myCompany_name}}" wx:key="index">{{item}}
+      <image src='/images/delete0.png' class='delete' mode='aspectFit' bindtap='delete' data-Index="{{index}}"></image>
+    </view>
+  </view>
+</view>
+
+<view class='content'>
+  <view class='title'>搜索结果</view>
+  <view wx:if='{{companyList==""}}' class='company'>暂无搜索结果</view>
+  <scroll-view scroll-y="true" class='companyList' wx:if='{{companyList!==""}}'>
+    <view class='list' wx:for="{{companyList}}" wx:key="index" wx:for-item="companyList">
+      <view style='width: 80%' data-com_id="{{companyList.id}}" bindtap='linkDetail'>{{companyList.company}}</view>
+      <button bindtap='choose' data-id='{{companyList}}' class='sub'>关注</button>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='tip'>点击栏目可查看公司详情</view>

@@ -1,0 +1,10 @@
+<image src='/images/Luslab.jpg'></image>
+<text class='title'>请选择考试目的</text>
+<view class='text' bindtap='course'><text>我选了《创新创业基础课》
+
+参加课程考试</text></view>
+<view class='text' bindtap='scholarship'>
+  <text>我想加入《陆向谦创新创业实验室》
+  
+  和同学们一起玩案例</text>
+</view>

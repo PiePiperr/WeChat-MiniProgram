@@ -1,0 +1,83 @@
+<view class='header'>
+  <view class='company'>
+    <image src='{{chollima.com_logo_archive}}' class='logo' style='aspectFit'></image>
+    <view class='com_info'>
+      <view class='title'>{{chollima.com_name}}</view>
+      <!-- <button class='com_sub'>关注</button> -->
+      <text class='com_intro'>{{chollima.com_des}}</text>
+    </view>
+  </view>
+
+  <view class='memo'>
+    <view class='title'>标签</view>
+    <view class='tags' wx:for="{{tags}}" wx:key="index" wx:for-item="tags">{{tags.tag_name}}</view>
+  </view>
+  <view class='invest'>
+    <view class='title'>融资信息</view>
+    <view class='bp_li' style='width: 400rpx'>最新融资时间： {{chollima.invest[0].invse_year}}-{{chollima.invest[0].invse_month}}-{{chollima.invest[0].invse_day}}</view>
+    <view class='bp_li'>轮次：{{chollima.invest[0].invse_round_name}}</view>
+  </view>
+  <view class='invest'>
+    <view class='bp_li' style='width: 400rpx'>融资额： {{Money}}</view>
+    <view class='bp_li'>最新估值：{{Value}}</view>
+  </view>
+</view>
+
+<view class='container'>
+  <view class='title'>里程碑</view>
+  <scroll-view scroll-y="true" class='mil_list'>
+    <view class='milestone' wx:for="{{milestone}}" wx:key="index" wx:for-item="milestone">
+      <view class='mil_line'>
+        <view class='line'></view>
+        <view class='dot'></view>
+        <view class='line'></view>
+      </view>
+      <view class='mil_text'>
+        <view>{{milestone.com_mil_year}}-{{milestone.com_mil_month}}</view>
+        <view>{{milestone.com_mil_detail}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='container'>
+  <view class='title'>团队信息</view>
+  <view class='team'>
+    <view class='person' wx:for="{{team}}" wx:key="index" wx:for-item="team">
+      <image class='per_logo' src='{{team.per_logo}}' style='aspectFit'></image>
+      <view class='per_info'>
+        <view class='per_name'>{{team.per_name}}——{{team.des}}</view>
+        <scroll-view scroll-y="true" class='per_intro'>{{team.introduce}}</scroll-view> 
+      </view>
+      <!-- <button class='sub'>关注</button> -->
+    </view>
+  </view>
+</view>
+
+<view class='container'>
+  <view class='title'>相关产品</view>
+  <view class='pro_list'>
+    <view class='product'>
+      <view style='width: 10%'>序号</view>
+      <view style='width: 60%'>产品名</view>
+      <view style='width: 20%'>产品类型</view>
+    </view>
+    <view class='product' wx:for="{{product}}" wx:key="index" wx:for-item="product">
+      <view style='width: 10%'>{{index + 1}}</view>
+      <view style='width: 60%'>{{product.com_pro_name}}</view>
+      <view style='width: 20%'>{{product.com_pro_type_name}}</view>
+      <!-- <view class='pro_detail'>{{product.com_pro_detail}}</view> -->
+    </view>
+
+  </view>
+</view>
+
+<view class='container'>
+  <view class='title'>类似公司</view>
+  <scroll-view class='similar' scroll-x="true">
+    <view class='sim_com' wx:for="{{similar_company}}" wx:key="index" wx:for-item="similar_company">
+      <image src='{{similar_company.com_logo_archive}}' class='com_logo' style='aspectFit'></image>
+      <view class='com_name'>{{similar_company.com_name}}</view>
+    </view>
+  </scroll-view>
+</view>

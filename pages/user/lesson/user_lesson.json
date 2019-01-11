@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "txv-video": "plugin://tencentvideo/video"
+  },
+  "navigationBarTitleText": "我的课程",
+  "navigationBarBackgroundColor": "#17AFF8",
+  "navigationBarTextStyle": "white"
+}
