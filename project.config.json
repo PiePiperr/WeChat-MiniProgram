@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
+	"libVersion": "2.5.0",
 	"appid": "wxe4fac813a0d128d3",
 	"projectname": "%E8%BF%AD%E4%BB%A32.4.6%20%E5%BC%80%E5%8F%91%E7%89%88",
 	"condition": {
@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 13,
 			"list": [
 				{
 					"id": 0,
@@ -49,15 +49,9 @@
 					"query": "iid=AOTY4OTkxMTM5MzY"
 				},
 				{
-					"id": 2,
-					"name": "考试",
-					"pathName": "pages/user/exam/index/exam_index",
-					"query": ""
-				},
-				{
-					"id": 4,
+					"id": 3,
 					"name": "zoom",
-					"pathName": "pages/user/exam/webex/webex",
+					"pathName": "pages/user/exam/zoom/zoom",
 					"query": ""
 				},
 				{
@@ -92,12 +86,6 @@
 				},
 				{
 					"id": -1,
-					"name": "创新课考核",
-					"pathName": "pages/user/exam/course/course",
-					"query": ""
-				},
-				{
-					"id": -1,
 					"name": "奖学金考核",
 					"pathName": "pages/user/exam/scholarship/scholarship",
 					"query": ""
@@ -119,6 +107,12 @@
 					"name": "行业报告",
 					"pathName": "pages/user/exam/report/report",
 					"query": "iid=AOTY4OTQ1MzcwODg"
+				},
+				{
+					"id": -1,
+					"name": "关注行业",
+					"pathName": "pages/user/industry/user_industry",
+					"query": ""
 				}
 			]
 		}

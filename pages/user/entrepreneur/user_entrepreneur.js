@@ -15,7 +15,7 @@ Page({
 
 
   onLoad: function(e) {
-    var that = this
+    let that = this
     wx.getStorage({
       key: 'MyEntrepreneur',
       success: function(res) {
@@ -30,9 +30,9 @@ Page({
 
 
   save: function(e) {
-    var that = this
-    var id = that.data.myentre_id
-    var name = that.data.myentre_name
+    let that = this
+    let id = that.data.myentre_id
+    let name = that.data.myentre_name
     wx.setStorage({
       key: 'MyEntrepreneur',
       data: {
@@ -48,19 +48,10 @@ Page({
       },
       success: function(e) {
         console.log(e)
-        wx.switchTab({
-          url: '../index/user_index',
-          success: function(e) {
-            var page = getCurrentPages().pop();
-            if (page == undefined || page == null) return;
-            page.onShow();
-          }
-        })
+        wx.navigateBack({})
       },
       fail: function () {
-        wx.switchTab({
-          url: '../index/user_index'
-        })
+        wx.navigateBack({})
         wx.showToast({
           title: '保存失败',
           icon: 'none',
@@ -71,7 +62,7 @@ Page({
   },
 
   bindKeyInput: function(e) {
-    var that = this
+    let that = this
     that.setData({
       inputText: e.detail.value,
     })
@@ -97,8 +88,8 @@ Page({
 
 
   choose: function(e) {
-    var that = this
-    var index = that.data.myentre_name.indexOf(e.currentTarget.dataset.id.entrepreneur);
+    let that = this
+    let index = that.data.myentre_name.indexOf(e.currentTarget.dataset.id.entrepreneur);
     if (index >= 0) {
       wx.showModal({
         title: '提示',
@@ -114,7 +105,7 @@ Page({
 
   delete: function(e) {
     console.log(e.currentTarget.dataset.index)
-    var that = this
+    let that = this
     that.data.myentre_name.splice(e.currentTarget.dataset.index, 1)
     that.data.myentre_id.splice(e.currentTarget.dataset.index, 1)
     that.setData({

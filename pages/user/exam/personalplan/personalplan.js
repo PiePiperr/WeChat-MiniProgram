@@ -259,7 +259,7 @@ Page({
           if (e.data.code == 1) {
             wx.setStorage({
               key: 'user_level',
-              data: '1',
+              data: '2',
             })
             wx.showModal({
               title: '上传成功',

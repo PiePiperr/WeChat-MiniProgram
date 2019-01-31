@@ -89,6 +89,15 @@ Page({
         })
       },
     })
+    wx.request({
+      url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/queryPlanInfo',
+      data:{
+        uid: wx.getStorageSync('uid')
+      },
+      success:function(e){
+        console.log(e)
+      }
+    })
   },
   getUserInfoButton: function(e) {
     console.log(e)
@@ -131,9 +140,11 @@ Page({
   },
 
   edit_career: function(e) {
+    console.log(e.currentTarget.dataset.data)
     let that = this
+    let a = e.currentTarget.dataset.data == 'hide' ? 'show' : 'hide'
     that.setData({
-      choose: 'show'
+      choose: a
     })
   },
 
@@ -224,9 +235,9 @@ Page({
     })
   },
   //入学考试
-  exam: function(e) {
+  scholarship: function () {
     wx.navigateTo({
-      url: '../exam/index/exam_index'
+      url: '../exam/scholarship/scholarship'
     })
   },
 
@@ -235,7 +246,6 @@ Page({
       url: '../lesson/user_lesson'
     })
   },
-
 
   onShow: function() {
     let that = this

@@ -1,17 +1,14 @@
 Page({
   data: {},
   onShow: function(e) {
-    let that = this
-    wx.getStorage({
-      key: 'MyCompany',
-      success: function(res) {
-        that.setData({
-          MyCompany: res.data
-        })
-      }
-    })
+    console.log(this.data.MyCompany)
+    if (wx.getStorageSync('MyCompany')) {
+      this.setData({
+        MyCompany: wx.getStorageSync('MyCompany')
+      })
+    }
   },
-  search: function (e) {
+  search: function(e) {
     wx.navigateTo({
       url: '../../chollima/search/chollima_search'
     })

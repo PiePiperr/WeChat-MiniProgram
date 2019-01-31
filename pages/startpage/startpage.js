@@ -94,11 +94,11 @@ Page({
   },
 
   onLoad: function() {
-    // if (wx.getStorageSync('MyIndustry').length > 0) {
-    //   wx.switchTab({
-    //     url: '../chollima/list/chollima_list',
-    //   })
-    // }
+    if (wx.getStorageSync('MyIndustry').length > 0) {
+      wx.switchTab({
+        url: '../chollima/list/chollima_list',
+      })
+    }
   },
 
   check: function(e) {

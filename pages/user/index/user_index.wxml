@@ -28,7 +28,7 @@
       <view class='number'>{{entre_number}}</view>
       <view class='text1'>关注企业家</view>
     </view>
-    <view class='item' bindtap='edit_career'>
+    <view class='item' bindtap='edit_career' data-data='{{choose}}'>
       <view class='number'>{{career_number}}</view>
       <view class='text1'>职业定位</view>
     </view>
@@ -62,7 +62,7 @@
 </view>
 
 <view class='userInfo3'>
-  <view class='{{info}} my' bindtap='exam'>
+  <view class='{{info}} my' bindtap='scholarship'>
     <image src='/images/Lu_2.png' class='collect'></image>
     <text>考核</text>
     <image src='/images/borrow.png' class='borrow'></image>

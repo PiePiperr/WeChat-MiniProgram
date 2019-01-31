@@ -1,0 +1,28 @@
+<view class='content'>
+  <view class='title'>考核内容
+    <image class='info' bindtap='info' src='/images/question_mark.png'></image>
+  </view>
+  <view class='text'>
+    <text>安装zoom会议系统，并参加每晚的例会，使用语音介绍自己量身定做的培养方案，了解各个部门目前在做的项目，并选择一个部门加入</text>
+  </view>
+  <view class='text'>考核时间为每晚例会的前半小时
+    <text selectable='true'>会议链接：https://zoom.us/j/445532561
+    会议ID:  445-532-561</text></view>
+  <view class='title'>考核要求</view>
+  <view class='text'>
+    <text>熟悉zoom会议系统的操作，保证在说话音量始终、稳定，无嘈杂背景音。考核通过后输入负责人提供的邀请码即可进入下一阶段的考核</text>
+  </view>
+  <view class='Input'>
+    <input confirm-type="done" bindconfirm="check" bindinput="bindKeyInput" placeholder="邀请码"></input>
+    <button bindtap='check'>确认</button>
+  </view>
+
+  <view class='title'>视频教程</view>
+  <txv-video vid="w0538pqhg66" playerid="txv1"></txv-video>
+
+  <view class='title'>QQ群</view>
+  <view class='text'>加入qq群了解更多相关信息, 群号：
+    <text selectable='true'>832590345</text>
+  </view>
+  <image src='{{ImgUrl[0]}}' mode='scaleToFill' bindtap="previewImage"></image>
+</view>

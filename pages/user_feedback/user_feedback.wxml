@@ -1,9 +1,0 @@
-<!--pages/user_feedback/user_feedback.wxml-->
-
-<view class='top'></view>
-<view class='textarea'>
-
-<textarea class='text' placeholder="请输入您的意见..." bindblur="bindTextAreaBlur" value='{{inputtext}}'></textarea>
-
-<button class='submit' bindtap='submit'>提交</button>
-</view>

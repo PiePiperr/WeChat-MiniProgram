@@ -1,9 +1,9 @@
 Page({
 
   data: {
-    level0: false,
-    level1: true,
+    level1: false,
     level2: true,
+    level3: true,
     arrow1: true,
     arrow2: true,
     email: ''
@@ -14,18 +14,18 @@ Page({
     wx.getStorage({
       key: 'user_level',
       success: function (res) {
-        if (res.data == 1) {
+        if (res.data == 2) {
           that.setData({
-            level0: true,
-            level1: false,
+            level1: true,
+            level2: false,
             arrow1: false,
           })
         } else
-          if (res.data == 2) {
+          if (res.data == 3) {
             that.setData({
-              level0: true,
               level1: true,
-              level2: false,
+              level2: true,
+              level3: false,
               arrow1: false,
               arrow2: false
             })
@@ -34,7 +34,7 @@ Page({
       fail: function (res) {
         wx.setStorage({
           key: 'user_level',
-          data: 0,
+          data: 1,
         })
       }
     })
@@ -103,9 +103,9 @@ Page({
     })
   },
 
-  webex: function () {
+  zoom: function () {
     wx.navigateTo({
-      url: '../webex/webex'
+      url: '../zoom/zoom'
     })
   },
 

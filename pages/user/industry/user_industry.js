@@ -1,4 +1,3 @@
-// pages/industry/industry.js
 Page({
   data: {
     IndustryList: [{
@@ -150,22 +149,23 @@ Page({
     that.setData({
       industry_number: wx.getStorageSync('MyIndustry').length
     })
-    wx.navigateBack({})
-    wx.showToast({
-      title: '保存成功',
-      icon: 'success',
-      duration: 500
-    })
 
     wx.request({
       url: 'https://wxapp.proflu.cn/vipSystem/wxapp/personal/updateIndustry',
       data: {
         uid: wx.getStorageSync('uid'),
-        id: CheckedIndustry.toString()
+        id: CheckedIndustry.id
       },
-      success: function(e) {
+      success: function (e) {
         console.log(e)
       }
+    })
+
+    wx.navigateBack({})
+    wx.showToast({
+      title: '保存成功',
+      icon: 'success',
+      duration: 500
     })
   },
 })

@@ -1,38 +1,25 @@
 const txvContext = requirePlugin("tencentvideo");
 Page({
   data: {
-    code: 'w6rtsak5xuya21',
+    code: 'lxqcxcysys',
     inputText: '',
     inputValue: '',
     videos: [],
-    ImgUrl: [],
+    ImgUrl: ['../../../../images/zhnlkh.png',1]
   },
 
   onLoad: function(options) {
     let that = this
     wx.showModal({
       title: '考核须知',
-      content: '扫描页面底部二维码进入综合能力考核群获取考核相关信息，通过后会收到负责人发送的邀请码，在下方输入后即可进入下一阶段',
-    })
-    wx.request({
-      url: 'https://wxapp.proflu.cn/vipSystem/wxapp/QR_code/queryQR_code?id=1',
-      data: {
-        uid: wx.getStorageSync('uid')
-      },
-      success: function(e) {
-        console.log(e)
-        that.setData({
-          ImgUrl: ['http://img01.store.sogou.com/net/a/04/link?appid=100520029&url=' + e.data.url, 1]
-        })
-        console.log(that.data.ImgUrl)
-      },
+      content: '加入qq群了解更多考核相关信息（页面最下方）',
     })
   },
 
   info: function() {
     wx.showModal({
       title: '考核须知',
-      content: '扫描页面底部二维码进入综合能力考核群获取考核相关信息，通过后会收到负责人发送的邀请码，在下方输入后即可进入下一阶段',
+      content: '加入qq群了解更多考核相关信息（页面最下方）',
     })
   },
 
@@ -43,10 +30,8 @@ Page({
   },
 
   previewImage: function(e) {
-    let that = this
     wx.previewImage({
-      current: that.data.ImgUrl,
-      urls: that.data.ImgUrl
+      urls: this.data.ImgUrl
     })
   },
 
@@ -55,7 +40,7 @@ Page({
     if (that.data.inputText == that.data.code) {
       wx.setStorage({
         key: 'user_level',
-        data: '2',
+        data: '3',
       })
       wx.showModal({
         title: '密码正确',

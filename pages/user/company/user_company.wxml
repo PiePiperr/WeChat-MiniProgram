@@ -3,7 +3,7 @@
     <view style='width: 70%'>公司</view>
     <view style='width: 30%'>操作</view>
   </view>
-  <view wx:if='{{MyCompany.id==""}}' class='none'>
+  <view wx:if='{{MyCompany.id==""||MyCompany==undefined}}' class='none'>
     <image class='noresult' src='/images/noresult.png'></image>
     <text>这里空空如也</text>
     <view class='search' bindtap='search'>去关注</view>

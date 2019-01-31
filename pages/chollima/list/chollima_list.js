@@ -8,15 +8,11 @@ Page({
 
   onLoad: function(e) {
     let that = this
-    if (!wx.getStorageSync('MyIndustry')) {
-      wx.navigateTo({
-        url: '../../startpage/startpage',
-      })
-    } else {
-      let page = 1
-      wx.showLoading({
-        title: '正在努力加载',
-        mask: true
+    let page = 1
+    if (!wx.getStorageSync('com_list')) {
+      wx.showModal({
+        title: '欢迎来到陆向谦推荐',
+        content: '在这里你可以定制自己感兴趣领域的创业公司，并时刻关注行业资讯'
       })
       wx.request({
         url: 'https://openapi.itjuzi.com/oauth2.0/get_access_token',
@@ -87,7 +83,16 @@ Page({
           })
         }
       })
+    } else {
+      that.setData({
+        list: wx.getStorageSync('com_list')
+      })
+      wx.showToast({
+        title: '加载成功',
+        icon: 'success'
+      })
     }
+
   },
 
   onShow: function(e) {
@@ -159,7 +164,7 @@ Page({
   info: function(e) {
     wx.showModal({
       title: '千里马俱乐部',
-      content: '千里马俱乐部是估值超过10亿元的创业公司，点击左上角搜索按钮可以查询和关注感兴趣的公司',
+      content: '千里马俱乐部是估值超过10亿元的创业公司，点击公司名查看详细信息，左上角搜索按钮可以查询和关注公司',
       confirmText: "去看看",
       success: function(res) {
         if (res.confirm) {
